@@ -54,3 +54,9 @@ jobs:
           cp -R "$APP_PATH" Payload/
 
           zip -r "28天减脂打卡.tipa" Payload
+      - name: Upload TIPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: FatLoss28-TIPA
+          path: 28天减脂打卡.tipa
+          if-no-files-found: error
