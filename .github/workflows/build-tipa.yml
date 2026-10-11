@@ -36,12 +36,21 @@ jobs:
 
       - name: Package TIPA
         run: |
-          mkdir -p Payload
-          cp -R build/Build/Products/Release-iphoneos/FatLoss28.app Payload/
-          zip -r "28天减脂打卡.tipa" Payload
+          set -e
 
-      - name: Upload TIPA
-        uses: actions/upload-artifact@v4
-        with:
-          name: 28天减脂打卡-tipa
-          path: 28天减脂打卡.tipa
+          echo "查找编译生成的 APP..."
+          find build/Build/Products -type d -name "*.app" -print
+
+          APP_PATH=$(find build/Build/Products -type d -name "*.app" -print -quit)
+
+          if [ -z "$APP_PATH" ]; then
+            echo "错误：没有找到 .app 文件"
+            exit 1
+          fi
+
+          echo "找到 APP：$APP_PATH"
+
+          mkdir -p Payload
+          cp -R "$APP_PATH" Payload/
+
+          zip -r "28天减脂打卡.tipa" Payload
