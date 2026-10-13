@@ -39,3 +39,21 @@ assert "com.example.fatloss28" in spec, "V3 Bundle ID must be preserved"
 assert 'IPHONEOS_DEPLOYMENT_TARGET: "16.0"' in spec
 assert (root / ".github/workflows/build-tipa.yml").is_file()
 print(f"PASS: {len(sources)} Swift sources, plist/JSON/icon/project preflight")
+
+catalog = json.loads((root / "FitLife/Resources/TrainingPrograms.json").read_text(encoding="utf-8"))
+fixture = json.loads((root / "Tests/LegacyTrainingFixture.json").read_text(encoding="utf-8"))
+assert len(catalog) == 10
+assert len({p["id"] for p in catalog}) == len(catalog)
+original = next(p for p in catalog if p["id"] == "legacy-v3-28day")
+assert [[e["prescription"] for e in d["exercises"]] for d in original["days"]] == fixture
+assert {"初级", "中级"} <= {p["level"] for p in catalog}
+assert {"增肌", "减脂", "基础体能", "恢复"} <= {p["goal"] for p in catalog}
+for program in catalog:
+    assert 1 <= program["weeks"] <= 52
+    assert len({d["offset"] for d in program["days"]}) == len(program["days"])
+    for day in program["days"]:
+        assert 0 <= day["offset"] <= 6
+        for exercise in day["exercises"]:
+            assert exercise["sets"] > 0
+            assert exercise.get("reps", 0) > 0 or exercise.get("durationSeconds", 0) > 0
+print("PASS: 10 offline programs, 25 original V3 prescriptions, goal/level coverage")

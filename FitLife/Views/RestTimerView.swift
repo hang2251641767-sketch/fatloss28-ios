@@ -8,6 +8,11 @@ struct RestTimerView: View {
     @State private var remaining = 90
     @State private var paused = false
     private let ticker = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
+    init(initialDuration: Int = 90) {
+        let value = max(30, initialDuration)
+        _duration = State(initialValue: value)
+        _remaining = State(initialValue: value)
+    }
     var body: some View {
         VStack(spacing: 12) {
             Text("\(remaining / 60):\(String(format: "%02d", remaining % 60))")

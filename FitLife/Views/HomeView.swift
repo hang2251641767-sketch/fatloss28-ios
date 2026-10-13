@@ -29,6 +29,10 @@ struct HomeView: View {
                     }
                     Card {
                         Text("今日训练").font(.headline)
+                        if let current = store.activeEnrollment {
+                            Text(current.name).font(.subheadline).foregroundStyle(.secondary)
+                            ProgramProgressView(enrollment: current)
+                        }
                         if store.todayPlans.isEmpty { Text("今天没有安排训练，享受恢复日。").foregroundStyle(.secondary) }
                         ForEach(store.todayPlans) { plan in
                             NavigationLink(plan.name) { WorkoutDetailView(planID: plan.id) }

@@ -8,6 +8,11 @@ final class AppStore: ObservableObject {
     @Published var nutrition: [NutritionEntry] = [] { didSet { save() } }
     @Published var plans: [WorkoutPlan] = [] { didSet { save() } }
     @Published var workouts: [WorkoutRecord] = [] { didSet { save() } }
+    @Published var enrollments: [ProgramEnrollment] = [] { didSet { save() } }
+    @Published var activeEnrollmentID: UUID? { didSet { save() } }
+    @Published private(set) var library: [TrainingProgram] = []
+    @Published private(set) var libraryError = ""
+    private var programRecoveryVersion: Int?
     @Published var reminderMessage = ""
     private var legacyV3: [String: String] = [:]
     private let defaults: UserDefaults
@@ -15,8 +20,13 @@ final class AppStore: ObservableObject {
     private var loading = true
     private var unreadableData = false
 
-    init(defaults: UserDefaults = .standard) {
+    init(defaults: UserDefaults = .standard, programLibrary: [TrainingProgram]? = nil) {
         self.defaults = defaults
+        if let provided = programLibrary { library = provided }
+        else {
+            do { library = try ProgramLibrary.load() }
+            catch { libraryError = "本地计划库读取失败：\(error.localizedDescription)" }
+        }
         if let data = defaults.data(forKey: key),
            let backup = try? JSONDecoder().decode(BackupData.self, from: data) {
             apply(backup)
@@ -25,14 +35,21 @@ final class AppStore: ObservableObject {
         } else {
             unreadableData = true
         }
+        if !unreadableData { recoverOriginalProgramIfNeeded() }
         loading = false
         save()
+    }
+
+    var activeEnrollment: ProgramEnrollment? { enrollments.first { $0.id == activeEnrollmentID } }
+    func plansForEnrollment(_ id: UUID) -> [WorkoutPlan] { plans.filter { $0.programInstanceID == id } }
+    func scheduledPlans(on date: Date) -> [WorkoutPlan] {
+        plans.filter { ProgramSchedule.matches($0, date: date, enrollments: enrollments, activeID: activeEnrollmentID) }
     }
 
     var latestWeight: WeightEntry? { weights.max { $0.date < $1.date } }
     var todayNutrition: [NutritionEntry] { nutrition.filter { Calendar.current.isDateInToday($0.date) } }
     var todayCalories: Int { todayNutrition.reduce(0) { $0 + $1.calories } }
-    var todayPlans: [WorkoutPlan] { plans.filter { $0.weekday == Calendar.current.component(.weekday, from: Date()) } }
+    var todayPlans: [WorkoutPlan] { scheduledPlans(on: Date()) }
     var streak: Int {
         let calendar = Calendar.current
         var date = calendar.startOfDay(for: Date())
@@ -67,7 +84,8 @@ final class AppStore: ObservableObject {
 
     private var backup: BackupData {
         BackupData(profile: profile, weights: weights, nutrition: nutrition, plans: plans,
-                   workouts: workouts, legacyV3: legacyV3)
+                   workouts: workouts, legacyV3: legacyV3, enrollments: enrollments,
+                   activeEnrollmentID: activeEnrollmentID, programRecoveryVersion: programRecoveryVersion)
     }
 
     func save() {
@@ -82,6 +100,9 @@ final class AppStore: ObservableObject {
         plans = data.plans
         workouts = data.workouts ?? []
         legacyV3 = data.legacyV3 ?? [:]
+        enrollments = data.enrollments ?? []
+        activeEnrollmentID = data.activeEnrollmentID
+        programRecoveryVersion = data.programRecoveryVersion
     }
 
     func exportData() throws -> URL {
@@ -107,7 +128,11 @@ final class AppStore: ObservableObject {
               Set(restored.plans.map(\.id)).count == restored.plans.count,
               Set(restored.nutrition.map(\.id)).count == restored.nutrition.count,
               Set((restored.workouts ?? []).map(\.id)).count == (restored.workouts ?? []).count,
-              restored.plans.allSatisfy({ (1...7).contains($0.weekday) }),
+              restored.plans.allSatisfy({ (1...7).contains($0.weekday) && ($0.cycleDay.map { (0...6).contains($0) } ?? true) }),
+              Set((restored.enrollments ?? []).map(\.id)).count == (restored.enrollments ?? []).count,
+              (restored.enrollments ?? []).allSatisfy({ (1...52).contains($0.weeks) }),
+              restored.activeEnrollmentID.map({ id in (restored.enrollments ?? []).contains { $0.id == id } }) ?? true,
+              restored.plans.allSatisfy({ plan in plan.programInstanceID.map { id in (restored.enrollments ?? []).contains { $0.id == id } } ?? true }),
               restored.nutrition.allSatisfy({ $0.calories >= 0 && $0.calories <= 20000 && $0.protein.isFinite && $0.carbs.isFinite && $0.fat.isFinite && $0.protein >= 0 && $0.carbs >= 0 && $0.fat >= 0 })
         else { throw DataError.invalidBackup }
         // Keep a recovery copy before replacing data.
@@ -115,6 +140,7 @@ final class AppStore: ObservableObject {
         loading = true
         apply(restored)
         unreadableData = false
+        recoverOriginalProgramIfNeeded()
         loading = false
         save()
         updateReminder()
@@ -145,6 +171,50 @@ final class AppStore: ObservableObject {
                 }
             }
         }
+    }
+
+    /// Each enrollment owns copies, so editing it cannot mutate the offline library.
+    func joinProgram(_ program: TrainingProgram, start: Date) {
+        let enrollment = program.makeEnrollment(start: start)
+        loading = true
+        enrollments.append(enrollment)
+        plans.append(contentsOf: program.makePlans(for: enrollment))
+        activeEnrollmentID = enrollment.id
+        loading = false
+        save()
+    }
+
+    /// A new cycle preserves modified templates and historical workout snapshots.
+    func restartProgram(_ id: UUID, start: Date = Date()) {
+        guard let index = enrollments.firstIndex(where: { $0.id == id }) else { return }
+        loading = true
+        enrollments[index].startDate = Calendar.current.startOfDay(for: start)
+        for p in plans.indices where plans[p].programInstanceID == id {
+            let date = Calendar.current.date(byAdding: .day, value: plans[p].cycleDay ?? 0, to: enrollments[index].startDate) ?? start
+            plans[p].weekday = Calendar.current.component(.weekday, from: date)
+        }
+        activeEnrollmentID = id
+        loading = false
+        save()
+    }
+
+    private func recoverOriginalProgramIfNeeded() {
+        guard programRecoveryVersion == nil,
+              let original = library.first(where: { $0.id == ProgramLibrary.originalID }) else { return }
+        if let existing = enrollments.first(where: { $0.sourceID == original.id }) {
+            // Do not change an already selected program or any exercise modifications.
+            if activeEnrollmentID == nil && enrollments.count == 1 { activeEnrollmentID = existing.id }
+            programRecoveryVersion = 1
+            return
+        }
+        let previousHadPlans = !plans.isEmpty || !enrollments.isEmpty
+        let legacyStart = legacyV3["startDate"] ?? defaults.string(forKey: "startDate")
+        let start = legacyStart.flatMap { ISO8601DateFormatter().date(from: $0) } ?? Date()
+        let enrollment = original.makeEnrollment(start: start)
+        enrollments.append(enrollment)
+        plans.append(contentsOf: original.makePlans(for: enrollment))
+        if !previousHadPlans { activeEnrollmentID = enrollment.id }
+        programRecoveryVersion = 1
     }
 
     private func migrateV3() {

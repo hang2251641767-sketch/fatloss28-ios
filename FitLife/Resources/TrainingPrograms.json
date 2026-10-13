@@ -1,0 +1,1447 @@
+[
+  {
+    "id": "legacy-v3-28day",
+    "name": "我的原定制 · 28天居家减脂",
+    "level": "初级",
+    "goal": "减脂",
+    "equipment": "哑铃 / 训练凳 / 自重",
+    "weeks": 4,
+    "minutes": "15–40",
+    "summary": "从仓库 V3 完整训练表恢复：上肢 A、下肢 A、低强度活动、上肢 B、恢复步行、下肢 B＋核心、休息 / 散步。",
+    "guidance": "保留原计划：每组约保留 3–4 次余力，不练到力竭；前两周先恢复习惯。原计划中按每侧完成的动作，次数 / 时长按单侧记录。",
+    "progression": "第 1–2 周按原组数适应。之后只有在动作标准且恢复良好时才酌情增加次数、组数或重量；不会自动增加训练量。",
+    "source": "恢复自 fatloss28-ios 仓库保留的 Sources/ContentView.swift（V3 原始训练表）。",
+    "days": [
+      {
+        "offset": 0,
+        "name": "上肢A",
+        "exercises": [
+          {
+            "name": "哑铃平板卧推",
+            "prescription": "哑铃平板卧推 2组×10–12次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "reps": 10
+          },
+          {
+            "name": "单臂哑铃划船",
+            "prescription": "单臂哑铃划船 2组×每侧10–12次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。 每侧分别完成，录入次数 / 时长按单侧记录。",
+            "reps": 10
+          },
+          {
+            "name": "坐姿哑铃推举",
+            "prescription": "坐姿哑铃推举 2组×8–12次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "reps": 8
+          },
+          {
+            "name": "哑铃弯举",
+            "prescription": "哑铃弯举 2组×12次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "reps": 12
+          },
+          {
+            "name": "平板支撑",
+            "prescription": "平板支撑 2组×20–30秒",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "durationSeconds": 20
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "保留原 V3 七天顺序，每 7 天循环，持续 28 天。按当天恢复情况执行。"
+      },
+      {
+        "offset": 1,
+        "name": "下肢A",
+        "exercises": [
+          {
+            "name": "徒手/轻哑铃深蹲",
+            "prescription": "徒手/轻哑铃深蹲 2组×10–12次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "reps": 10
+          },
+          {
+            "name": "哑铃罗马尼亚硬拉",
+            "prescription": "哑铃罗马尼亚硬拉 2组×10–12次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "reps": 10
+          },
+          {
+            "name": "臀桥",
+            "prescription": "臀桥 2组×15次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "reps": 15
+          },
+          {
+            "name": "提踵",
+            "prescription": "提踵 2组×15次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "reps": 15
+          },
+          {
+            "name": "死虫式",
+            "prescription": "死虫式 2组×每侧8–10次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。 每侧分别完成，录入次数 / 时长按单侧记录。",
+            "reps": 8
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "保留原 V3 七天顺序，每 7 天循环，持续 28 天。按当天恢复情况执行。"
+      },
+      {
+        "offset": 2,
+        "name": "低强度活动",
+        "exercises": [
+          {
+            "name": "轻松步行或原地踏步",
+            "prescription": "轻松步行或原地踏步 15–20分钟",
+            "sets": 1,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "durationSeconds": 900
+          },
+          {
+            "name": "胸肩髋轻柔拉伸",
+            "prescription": "胸肩髋轻柔拉伸 5分钟",
+            "sets": 1,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "durationSeconds": 300
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "保留原 V3 七天顺序，每 7 天循环，持续 28 天。按当天恢复情况执行。"
+      },
+      {
+        "offset": 3,
+        "name": "上肢B",
+        "exercises": [
+          {
+            "name": "上斜哑铃卧推",
+            "prescription": "上斜哑铃卧推 2组×10–12次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "reps": 10
+          },
+          {
+            "name": "胸托哑铃划船",
+            "prescription": "胸托哑铃划船 2组×10–12次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "reps": 10
+          },
+          {
+            "name": "哑铃侧平举",
+            "prescription": "哑铃侧平举 2组×12–15次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "reps": 12
+          },
+          {
+            "name": "哑铃过头臂屈伸",
+            "prescription": "哑铃过头臂屈伸 2组×10–12次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "reps": 10
+          },
+          {
+            "name": "鸟狗式",
+            "prescription": "鸟狗式 2组×每侧8–10次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。 每侧分别完成，录入次数 / 时长按单侧记录。",
+            "reps": 8
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "保留原 V3 七天顺序，每 7 天循环，持续 28 天。按当天恢复情况执行。"
+      },
+      {
+        "offset": 4,
+        "name": "恢复步行",
+        "exercises": [
+          {
+            "name": "轻松步行",
+            "prescription": "轻松步行 15–25分钟",
+            "sets": 1,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "durationSeconds": 900
+          },
+          {
+            "name": "每坐1小时起身活动",
+            "prescription": "每坐1小时起身活动",
+            "sets": 1,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "reps": 1,
+            "checklist": true
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "保留原 V3 七天顺序，每 7 天循环，持续 28 天。按当天恢复情况执行。"
+      },
+      {
+        "offset": 5,
+        "name": "下肢B+核心",
+        "exercises": [
+          {
+            "name": "高脚杯深蹲",
+            "prescription": "高脚杯深蹲 2组×10–12次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "reps": 10
+          },
+          {
+            "name": "哑铃罗马尼亚硬拉",
+            "prescription": "哑铃罗马尼亚硬拉 2组×10次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "reps": 10
+          },
+          {
+            "name": "反向弓步",
+            "prescription": "反向弓步 2组×每侧8次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。 每侧分别完成，录入次数 / 时长按单侧记录。",
+            "reps": 8
+          },
+          {
+            "name": "臀桥",
+            "prescription": "臀桥 2组×15次",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "reps": 15
+          },
+          {
+            "name": "侧平板支撑",
+            "prescription": "侧平板支撑 2组×每侧15–25秒",
+            "sets": 2,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。 每侧分别完成，录入次数 / 时长按单侧记录。",
+            "durationSeconds": 15
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "保留原 V3 七天顺序，每 7 天循环，持续 28 天。按当天恢复情况执行。"
+      },
+      {
+        "offset": 6,
+        "name": "休息/散步",
+        "exercises": [
+          {
+            "name": "休息或轻松散步",
+            "prescription": "休息或轻松散步 10–20分钟",
+            "sets": 1,
+            "notes": "原 V3 定制安排，保留原建议范围；每组保留约 3–4 次余力。",
+            "durationSeconds": 600
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "保留原 V3 七天顺序，每 7 天循环，持续 28 天。按当天恢复情况执行。"
+      }
+    ]
+  },
+  {
+    "id": "beginner-bodyweight",
+    "name": "初级 · 自重基础入门",
+    "level": "初级",
+    "goal": "基础体能",
+    "equipment": "自重 / 稳固椅子",
+    "weeks": 4,
+    "minutes": "15–30",
+    "summary": "每周两次全身练习，穿插短步行；适合刚开始建立运动习惯。",
+    "guidance": "组次为通用起点。先熟悉动作，选择能标准完成并保留 2–3 次余力的重量；出现疼痛或明显不适时停止。",
+    "progression": "动作稳定、恢复良好时先达到目标次数，再小幅增加重量；每次只调整一项，恢复不足时减少组数或延长休息。",
+    "source": "FitLife 原创通用模板；活动安排参考 CDC 成年人身体活动指南，不复制 Keep 课程。",
+    "days": [
+      {
+        "offset": 0,
+        "name": "全身基础 A",
+        "exercises": [
+          {
+            "name": "椅子坐站",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "墙壁俯卧撑",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "臀桥",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "鸟狗式",
+            "prescription": "2 组 × 8 次",
+            "sets": 2,
+            "reps": 8,
+            "notes": "每侧 8 次，稳定躯干。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 2,
+        "name": "轻松步行",
+        "exercises": [
+          {
+            "name": "步行",
+            "prescription": "15 分钟",
+            "sets": 1,
+            "durationSeconds": 900,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          },
+          {
+            "name": "轻柔拉伸",
+            "prescription": "5 分钟",
+            "sets": 1,
+            "durationSeconds": 300,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 3,
+        "name": "全身基础 B",
+        "exercises": [
+          {
+            "name": "扶椅半蹲",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "高位支撑俯卧撑",
+            "prescription": "2 组 × 8 次",
+            "sets": 2,
+            "reps": 8,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "臀桥",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "死虫式",
+            "prescription": "2 组 × 8 次",
+            "sets": 2,
+            "reps": 8,
+            "notes": "每侧 8 次。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 5,
+        "name": "活动恢复",
+        "exercises": [
+          {
+            "name": "步行",
+            "prescription": "20 分钟",
+            "sets": 1,
+            "durationSeconds": 1200,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          },
+          {
+            "name": "轻柔拉伸",
+            "prescription": "5 分钟",
+            "sets": 1,
+            "durationSeconds": 300,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      }
+    ]
+  },
+  {
+    "id": "beginner-dumbbell",
+    "name": "初级 · 哑铃全身入门",
+    "level": "初级",
+    "goal": "基础体能",
+    "equipment": "哑铃",
+    "weeks": 6,
+    "minutes": "25–35",
+    "summary": "每周三次非连续全身训练；逐步熟悉推、拉、蹲和髋铰链。",
+    "guidance": "组次为通用起点。先熟悉动作，选择能标准完成并保留 2–3 次余力的重量；出现疼痛或明显不适时停止。",
+    "progression": "动作稳定、恢复良好时先达到目标次数，再小幅增加重量；每次只调整一项，恢复不足时减少组数或延长休息。",
+    "source": "FitLife 原创通用模板；活动安排参考 CDC 成年人身体活动指南，不复制 Keep 课程。",
+    "days": [
+      {
+        "offset": 0,
+        "name": "全身 A",
+        "exercises": [
+          {
+            "name": "高脚杯深蹲",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "哑铃地板卧推",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "单臂哑铃划船",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每侧完成 10 次。"
+          },
+          {
+            "name": "臀桥",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 2,
+        "name": "全身 B",
+        "exercises": [
+          {
+            "name": "轻哑铃罗马尼亚硬拉",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "坐姿哑铃推举",
+            "prescription": "2 组 × 8 次",
+            "sets": 2,
+            "reps": 8,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "单臂哑铃划船",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每侧完成。"
+          },
+          {
+            "name": "死虫式",
+            "prescription": "2 组 × 8 次",
+            "sets": 2,
+            "reps": 8,
+            "notes": "每侧完成。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 4,
+        "name": "全身 C",
+        "exercises": [
+          {
+            "name": "高脚杯深蹲",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "哑铃地板卧推",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "单臂哑铃划船",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每侧完成。"
+          },
+          {
+            "name": "平板支撑",
+            "prescription": "2 组 × 20 秒",
+            "sets": 2,
+            "durationSeconds": 20,
+            "notes": "呼吸自然，动作稳定。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      }
+    ]
+  },
+  {
+    "id": "intermediate-upper-lower",
+    "name": "中级 · 上下肢四日分化",
+    "level": "中级",
+    "goal": "基础体能",
+    "equipment": "哑铃 / 训练凳",
+    "weeks": 8,
+    "minutes": "35–50",
+    "summary": "适合已有稳定力量训练习惯者；每周上下肢各两次。",
+    "guidance": "组次为通用起点。先熟悉动作，选择能标准完成并保留 2–3 次余力的重量；出现疼痛或明显不适时停止。",
+    "progression": "动作稳定、恢复良好时先达到目标次数，再小幅增加重量；每次只调整一项，恢复不足时减少组数或延长休息。",
+    "source": "FitLife 原创通用模板；活动安排参考 CDC 成年人身体活动指南，不复制 Keep 课程。",
+    "days": [
+      {
+        "offset": 0,
+        "name": "上肢 A",
+        "exercises": [
+          {
+            "name": "哑铃平板卧推",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "单臂哑铃划船",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每侧完成。"
+          },
+          {
+            "name": "坐姿哑铃推举",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "哑铃弯举",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 1,
+        "name": "下肢 A",
+        "exercises": [
+          {
+            "name": "高脚杯深蹲",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "哑铃罗马尼亚硬拉",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "臀桥",
+            "prescription": "2 组 × 15 次",
+            "sets": 2,
+            "reps": 15,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "提踵",
+            "prescription": "2 组 × 15 次",
+            "sets": 2,
+            "reps": 15,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 3,
+        "name": "上肢 B",
+        "exercises": [
+          {
+            "name": "上斜哑铃卧推",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "胸托哑铃划船",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "哑铃侧平举",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "哑铃过头臂屈伸",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 5,
+        "name": "下肢 B",
+        "exercises": [
+          {
+            "name": "反向弓步",
+            "prescription": "3 组 × 8 次",
+            "sets": 3,
+            "reps": 8,
+            "notes": "每侧完成。"
+          },
+          {
+            "name": "哑铃罗马尼亚硬拉",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "臀桥",
+            "prescription": "2 组 × 15 次",
+            "sets": 2,
+            "reps": 15,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "侧平板支撑",
+            "prescription": "2 组 × 20 秒",
+            "sets": 2,
+            "durationSeconds": 20,
+            "notes": "每侧 20 秒。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      }
+    ]
+  },
+  {
+    "id": "intermediate-fullbody",
+    "name": "中级 · 全身力量三日",
+    "level": "中级",
+    "goal": "基础体能",
+    "equipment": "哑铃 / 训练凳",
+    "weeks": 6,
+    "minutes": "35–45",
+    "summary": "每周三次全身训练，适合希望减少训练日但保持推拉腿均衡者。",
+    "guidance": "组次为通用起点。先熟悉动作，选择能标准完成并保留 2–3 次余力的重量；出现疼痛或明显不适时停止。",
+    "progression": "动作稳定、恢复良好时先达到目标次数，再小幅增加重量；每次只调整一项，恢复不足时减少组数或延长休息。",
+    "source": "FitLife 原创通用模板；活动安排参考 CDC 成年人身体活动指南，不复制 Keep 课程。",
+    "days": [
+      {
+        "offset": 0,
+        "name": "全身推拉 A",
+        "exercises": [
+          {
+            "name": "高脚杯深蹲",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "哑铃平板卧推",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "单臂哑铃划船",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每侧完成。"
+          },
+          {
+            "name": "平板支撑",
+            "prescription": "2 组 × 30 秒",
+            "sets": 2,
+            "durationSeconds": 30,
+            "notes": "呼吸自然，动作稳定。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 2,
+        "name": "全身髋主导 B",
+        "exercises": [
+          {
+            "name": "哑铃罗马尼亚硬拉",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "坐姿哑铃推举",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "胸托哑铃划船",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "死虫式",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每侧完成。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 4,
+        "name": "全身 C",
+        "exercises": [
+          {
+            "name": "反向弓步",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每侧完成。"
+          },
+          {
+            "name": "上斜哑铃卧推",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "胸托哑铃划船",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "哑铃弯举",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      }
+    ]
+  },
+  {
+    "id": "hypertrophy-beginner",
+    "name": "增肌 · 初级全身三日",
+    "level": "初级",
+    "goal": "增肌",
+    "equipment": "哑铃 / 训练凳",
+    "weeks": 8,
+    "minutes": "25–40",
+    "summary": "用基础动作覆盖全身，先建立动作和负重记录习惯。",
+    "guidance": "组次为通用起点。先熟悉动作，选择能标准完成并保留 2–3 次余力的重量；出现疼痛或明显不适时停止。",
+    "progression": "动作稳定、恢复良好时先达到目标次数，再小幅增加重量；每次只调整一项，恢复不足时减少组数或延长休息。",
+    "source": "FitLife 原创通用模板；活动安排参考 CDC 成年人身体活动指南，不复制 Keep 课程。",
+    "days": [
+      {
+        "offset": 0,
+        "name": "全身 A",
+        "exercises": [
+          {
+            "name": "高脚杯深蹲",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "哑铃平板卧推",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "单臂哑铃划船",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每侧完成。"
+          },
+          {
+            "name": "哑铃弯举",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 2,
+        "name": "全身 B",
+        "exercises": [
+          {
+            "name": "哑铃罗马尼亚硬拉",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "坐姿哑铃推举",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "胸托哑铃划船",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "哑铃侧平举",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 4,
+        "name": "全身 C",
+        "exercises": [
+          {
+            "name": "高脚杯深蹲",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "哑铃平板卧推",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "单臂哑铃划船",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每侧完成。"
+          },
+          {
+            "name": "哑铃过头臂屈伸",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      }
+    ]
+  },
+  {
+    "id": "hypertrophy-intermediate",
+    "name": "增肌 · 中级上下肢四日",
+    "level": "中级",
+    "goal": "增肌",
+    "equipment": "健身房器械 / 哑铃",
+    "weeks": 8,
+    "minutes": "40–55",
+    "summary": "使用可控的复合动作与辅助动作，重点记录稳定动作下的渐进负荷。",
+    "guidance": "组次为通用起点。先熟悉动作，选择能标准完成并保留 2–3 次余力的重量；出现疼痛或明显不适时停止。",
+    "progression": "动作稳定、恢复良好时先达到目标次数，再小幅增加重量；每次只调整一项，恢复不足时减少组数或延长休息。",
+    "source": "FitLife 原创通用模板；活动安排参考 CDC 成年人身体活动指南，不复制 Keep 课程。",
+    "days": [
+      {
+        "offset": 0,
+        "name": "上肢 A",
+        "exercises": [
+          {
+            "name": "器械胸推",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "坐姿划船",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "高位下拉",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "哑铃侧平举",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "哑铃弯举",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          }
+        ],
+        "restSeconds": 120,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 1,
+        "name": "下肢 A",
+        "exercises": [
+          {
+            "name": "腿举",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "哑铃罗马尼亚硬拉",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "坐姿腿弯举",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "提踵",
+            "prescription": "2 组 × 15 次",
+            "sets": 2,
+            "reps": 15,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          }
+        ],
+        "restSeconds": 120,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 3,
+        "name": "上肢 B",
+        "exercises": [
+          {
+            "name": "上斜哑铃卧推",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "胸托哑铃划船",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "器械肩推",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "绳索下压",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          }
+        ],
+        "restSeconds": 120,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 5,
+        "name": "下肢 B",
+        "exercises": [
+          {
+            "name": "高脚杯深蹲",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "臀桥",
+            "prescription": "3 组 × 12 次",
+            "sets": 3,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "腿屈伸",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "提踵",
+            "prescription": "2 组 × 15 次",
+            "sets": 2,
+            "reps": 15,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          }
+        ],
+        "restSeconds": 120,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      }
+    ]
+  },
+  {
+    "id": "fatloss-lowimpact",
+    "name": "减脂 · 初级低冲击",
+    "level": "初级",
+    "goal": "减脂",
+    "equipment": "自重 / 稳固椅子",
+    "weeks": 6,
+    "minutes": "15–35",
+    "summary": "不安排跳跃；两次全身力量与短步行结合，逐步延长有氧时间。减脂仍需配合饮食。",
+    "guidance": "组次为通用起点。先熟悉动作，选择能标准完成并保留 2–3 次余力的重量；出现疼痛或明显不适时停止。",
+    "progression": "动作稳定、恢复良好时先达到目标次数，再小幅增加重量；每次只调整一项，恢复不足时减少组数或延长休息。",
+    "source": "FitLife 原创通用模板；活动安排参考 CDC 成年人身体活动指南，不复制 Keep 课程。",
+    "days": [
+      {
+        "offset": 0,
+        "name": "全身力量 A",
+        "exercises": [
+          {
+            "name": "椅子坐站",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "墙壁俯卧撑",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "臀桥",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "死虫式",
+            "prescription": "2 组 × 8 次",
+            "sets": 2,
+            "reps": 8,
+            "notes": "每侧完成。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 1,
+        "name": "低冲击有氧",
+        "exercises": [
+          {
+            "name": "轻松步行",
+            "prescription": "20 分钟",
+            "sets": 1,
+            "durationSeconds": 1200,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 3,
+        "name": "全身力量 B",
+        "exercises": [
+          {
+            "name": "扶椅半蹲",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "高位支撑俯卧撑",
+            "prescription": "2 组 × 8 次",
+            "sets": 2,
+            "reps": 8,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "臀桥",
+            "prescription": "2 组 × 12 次",
+            "sets": 2,
+            "reps": 12,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "鸟狗式",
+            "prescription": "2 组 × 8 次",
+            "sets": 2,
+            "reps": 8,
+            "notes": "每侧完成。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 4,
+        "name": "低冲击有氧",
+        "exercises": [
+          {
+            "name": "轻松步行或原地踏步",
+            "prescription": "20 分钟",
+            "sets": 1,
+            "durationSeconds": 1200,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 5,
+        "name": "恢复步行",
+        "exercises": [
+          {
+            "name": "轻松步行",
+            "prescription": "25 分钟",
+            "sets": 1,
+            "durationSeconds": 1500,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      }
+    ]
+  },
+  {
+    "id": "fatloss-intermediate",
+    "name": "减脂 · 中级力量加有氧",
+    "level": "中级",
+    "goal": "减脂",
+    "equipment": "哑铃 / 步行环境",
+    "weeks": 8,
+    "minutes": "25–50",
+    "summary": "三次力量训练搭配两次中等强度步行，保持肌力并增加活动量。",
+    "guidance": "组次为通用起点。先熟悉动作，选择能标准完成并保留 2–3 次余力的重量；出现疼痛或明显不适时停止。",
+    "progression": "动作稳定、恢复良好时先达到目标次数，再小幅增加重量；每次只调整一项，恢复不足时减少组数或延长休息。",
+    "source": "FitLife 原创通用模板；活动安排参考 CDC 成年人身体活动指南，不复制 Keep 课程。",
+    "days": [
+      {
+        "offset": 0,
+        "name": "全身力量 A",
+        "exercises": [
+          {
+            "name": "高脚杯深蹲",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "哑铃平板卧推",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "单臂哑铃划船",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每侧完成。"
+          },
+          {
+            "name": "轻松步行",
+            "prescription": "15 分钟",
+            "sets": 1,
+            "durationSeconds": 900,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 1,
+        "name": "步行有氧",
+        "exercises": [
+          {
+            "name": "中等强度快走",
+            "prescription": "30 分钟",
+            "sets": 1,
+            "durationSeconds": 1800,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 2,
+        "name": "全身力量 B",
+        "exercises": [
+          {
+            "name": "哑铃罗马尼亚硬拉",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "坐姿哑铃推举",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "胸托哑铃划船",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "轻松步行",
+            "prescription": "15 分钟",
+            "sets": 1,
+            "durationSeconds": 900,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 4,
+        "name": "全身力量 C",
+        "exercises": [
+          {
+            "name": "反向弓步",
+            "prescription": "2 组 × 10 次",
+            "sets": 2,
+            "reps": 10,
+            "notes": "每侧完成。"
+          },
+          {
+            "name": "上斜哑铃卧推",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "胸托哑铃划船",
+            "prescription": "3 组 × 10 次",
+            "sets": 3,
+            "reps": 10,
+            "notes": "每组保留约 2–3 次余力；先选择能稳定完成动作的重量。"
+          },
+          {
+            "name": "轻松步行",
+            "prescription": "15 分钟",
+            "sets": 1,
+            "durationSeconds": 900,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 5,
+        "name": "步行有氧",
+        "exercises": [
+          {
+            "name": "中等强度快走",
+            "prescription": "30 分钟",
+            "sets": 1,
+            "durationSeconds": 1800,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      }
+    ]
+  },
+  {
+    "id": "recovery-mobility",
+    "name": "恢复 · 轻活动与灵活性",
+    "level": "初级",
+    "goal": "恢复",
+    "equipment": "自重",
+    "weeks": 4,
+    "minutes": "10–25",
+    "summary": "适合恢复日的轻活动模板，配合其他训练；不替代系统力量训练。",
+    "guidance": "组次为通用起点。先熟悉动作，选择能标准完成并保留 2–3 次余力的重量；出现疼痛或明显不适时停止。",
+    "progression": "动作稳定、恢复良好时先达到目标次数，再小幅增加重量；每次只调整一项，恢复不足时减少组数或延长休息。",
+    "source": "FitLife 原创通用模板；活动安排参考 CDC 成年人身体活动指南，不复制 Keep 课程。",
+    "days": [
+      {
+        "offset": 0,
+        "name": "轻活动 A",
+        "exercises": [
+          {
+            "name": "轻松散步",
+            "prescription": "15 分钟",
+            "sets": 1,
+            "durationSeconds": 900,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          },
+          {
+            "name": "胸肩髋轻柔拉伸",
+            "prescription": "5 分钟",
+            "sets": 1,
+            "durationSeconds": 300,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 2,
+        "name": "稳定与灵活性",
+        "exercises": [
+          {
+            "name": "鸟狗式",
+            "prescription": "1 组 × 8 次",
+            "sets": 1,
+            "reps": 8,
+            "notes": "每侧慢速完成。"
+          },
+          {
+            "name": "死虫式",
+            "prescription": "1 组 × 8 次",
+            "sets": 1,
+            "reps": 8,
+            "notes": "每侧慢速完成。"
+          },
+          {
+            "name": "髋踝轻柔活动",
+            "prescription": "5 分钟",
+            "sets": 1,
+            "durationSeconds": 300,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      },
+      {
+        "offset": 4,
+        "name": "轻活动 B",
+        "exercises": [
+          {
+            "name": "轻松散步",
+            "prescription": "20 分钟",
+            "sets": 1,
+            "durationSeconds": 1200,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          },
+          {
+            "name": "胸肩髋轻柔拉伸",
+            "prescription": "5 分钟",
+            "sets": 1,
+            "durationSeconds": 300,
+            "notes": "保持能完整说话的轻松至中等节奏；逐步适应。"
+          }
+        ],
+        "restSeconds": 90,
+        "instructions": "先热身 5–8 分钟，组间休息按恢复调整；训练后轻柔放松。"
+      }
+    ]
+  }
+]

@@ -31,6 +31,8 @@ struct Exercise: Codable, Identifiable {
     var id = UUID()
     var name: String
     var sets: [ExerciseSet] = []
+    var prescription: String?
+    var notes: String?
 }
 
 struct ExerciseSet: Codable, Identifiable {
@@ -38,6 +40,8 @@ struct ExerciseSet: Codable, Identifiable {
     var reps: Int = 10
     var weight: Double = 0
     var completed = false
+    var durationSeconds: Int?
+    var isChecklist: Bool?
 }
 
 struct WorkoutPlan: Codable, Identifiable {
@@ -47,6 +51,10 @@ struct WorkoutPlan: Codable, Identifiable {
     var exercises: [Exercise] = []
     var isCompleted = false
     var completedDate: Date?
+    var programInstanceID: UUID?
+    var cycleDay: Int?
+    var instructions: String?
+    var restSeconds: Int?
 }
 
 struct WorkoutRecord: Codable, Identifiable {
@@ -66,6 +74,9 @@ struct BackupData: Codable {
     var plans: [WorkoutPlan]
     var workouts: [WorkoutRecord]?
     var legacyV3: [String: String]?
+    var enrollments: [ProgramEnrollment]?
+    var activeEnrollmentID: UUID?
+    var programRecoveryVersion: Int?
 }
 
 enum DataError: LocalizedError {

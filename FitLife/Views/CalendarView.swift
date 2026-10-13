@@ -14,6 +14,9 @@ struct CalendarView: View {
                         .datePickerStyle(.graphical)
                 }
                 Section("所选日期") {
+                    ForEach(store.scheduledPlans(on: selectedDate)) { plan in
+                        Text("计划安排：\(plan.name)").font(.footnote).foregroundStyle(.secondary)
+                    }
                     if dayWeights.isEmpty { Text("尚未记录体重").foregroundStyle(.secondary) }
                     ForEach(dayWeights) { entry in Text(String(format: "体重：%.1f kg", entry.weight)).bold() }
                     Button("记录 / 修改当天体重") { addingWeight = true }
@@ -44,7 +47,13 @@ struct CalendarView: View {
                                 ForEach(workout.exercises) { exercise in
                                     Section(exercise.name) {
                                         ForEach(exercise.sets) { set in
-                                            Text("\(set.completed ? "✓" : "○") \(set.reps) 次 · \(set.weight, specifier: "%.1f") kg")
+                                            if set.isChecklist == true {
+                                                Text(set.completed ? "✓ 已完成活动" : "○ 未完成活动")
+                                            } else if let seconds = set.durationSeconds {
+                                                Text("\(set.completed ? "✓" : "○") \(seconds) 秒")
+                                            } else {
+                                                Text("\(set.completed ? "✓" : "○") \(set.reps) 次 · \(set.weight, specifier: "%.1f") kg")
+                                            }
                                         }
                                     }
                                 }

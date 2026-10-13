@@ -44,7 +44,7 @@ struct ProfileView: View {
                     Text("恢复会替换当前记录，建议先导出备份。旧版原始记录也包含在备份文件中。")
                         .font(.footnote).foregroundStyle(.secondary)
                 }
-                Section { Text("FitLife 4.0 · 本地记录").foregroundStyle(.secondary) }
+                Section { Text("FitLife 4.1 · 离线计划库").foregroundStyle(.secondary) }
             }
             .scrollDismissesKeyboard(.interactively)
             .keyboardDoneButton()

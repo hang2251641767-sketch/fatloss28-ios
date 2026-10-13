@@ -11,8 +11,8 @@ settings:
     IPHONEOS_DEPLOYMENT_TARGET: "16.0"
     SWIFT_VERSION: "5.0"
     PRODUCT_BUNDLE_IDENTIFIER: com.example.fatloss28
-    MARKETING_VERSION: "4.0.0"
-    CURRENT_PROJECT_VERSION: "400"
+    MARKETING_VERSION: "4.1.0"
+    CURRENT_PROJECT_VERSION: "410"
     TARGETED_DEVICE_FAMILY: "1,2"
 targets:
   FitLife:
@@ -26,6 +26,18 @@ targets:
         INFOPLIST_FILE: FitLife/Info.plist
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         CODE_SIGN_ENTITLEMENTS: FitLife/FitLife.entitlements
+  FitLifeTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [Tests]
+    dependencies:
+      - target: FitLife
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.fatloss28.tests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/FitLife.app/FitLife"
+        BUNDLE_LOADER: "$(TEST_HOST)"
 schemes:
   FitLife:
     build:
@@ -35,3 +47,6 @@ schemes:
       config: Debug
     archive:
       config: Release
+    test:
+      config: Debug
+      targets: [FitLifeTests]
