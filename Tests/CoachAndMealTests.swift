@@ -2,6 +2,14 @@ import XCTest
 @testable import FitLife
 
 final class CoachAndMealTests: XCTestCase {
+    func testBenchPressNeverMatchesPlankAndUnsupportedEquipmentIsExplicit() {
+        XCTAssertEqual(ExerciseGuide.forName("哑铃平板卧推").movement, .chestPress)
+        XCTAssertEqual(ExerciseGuide.forName("上斜哑铃卧推").movement, .chestPress)
+        XCTAssertEqual(ExerciseGuide.forName("平板支撑").movement, .plank)
+        XCTAssertEqual(ExerciseGuide.forName("侧平板支撑").movement, .sidePlank)
+        XCTAssertEqual(ExerciseGuide.forName("墙壁俯卧撑").movement, .wallPushup)
+        XCTAssertEqual(ExerciseGuide.forName("腿举").movement, .custom)
+    }
     func testPausedTimeFreezesAndDoesNotCreditBackgroundTime() {
         let exercise = Exercise(name: "深蹲", sets: [ExerciseSet(reps: 2)])
         let session = FollowAlongSession(exercises: [exercise], restSeconds: 5, warmup: 0, cooldown: 0)
