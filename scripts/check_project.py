@@ -57,3 +57,17 @@ for program in catalog:
             assert exercise["sets"] > 0
             assert exercise.get("reps", 0) > 0 or exercise.get("durationSeconds", 0) > 0
 print("PASS: 10 offline programs, 25 original V3 prescriptions, goal/level coverage")
+
+meals = json.loads((root / "FitLife/Resources/MealGuide.json").read_text(encoding="utf-8"))
+assert len(meals) == 7
+for day in meals:
+    assert len(day["meals"]) == 4
+    assert len({m["id"] for m in day["meals"]}) == 4
+    for meal in day["meals"]:
+        assert len({f["id"] for f in meal["ingredients"]}) == len(meal["ingredients"])
+        assert all(f["grams"] > 0 and f["basis"] for f in meal["ingredients"])
+for asset in ["CourseHome", "CourseStrength", "NutritionCover"]:
+    folder = root / ("FitLife/Assets.xcassets/" + asset + ".imageset")
+    assert (folder / "cover.png").is_file()
+    assert (folder / "cover.png").stat().st_size > 10000
+print("PASS: 7 daily meal menus, explicit portions, 3 offline photographic covers")

@@ -1,0 +1,1475 @@
+[
+  {
+    "id": 0,
+    "title": "鸡胸肉与豆腐",
+    "meals": [
+      {
+        "id": "day0-breakfast",
+        "name": "早餐",
+        "ingredients": [
+          {
+            "id": "oats",
+            "name": "燕麦",
+            "grams": 50,
+            "calories": 380,
+            "protein": 13,
+            "carbs": 67,
+            "fat": 7,
+            "basis": "干重",
+            "allergens": []
+          },
+          {
+            "id": "milk",
+            "name": "低脂牛奶",
+            "grams": 300,
+            "calories": 46,
+            "protein": 3.4,
+            "carbs": 5,
+            "fat": 1.5,
+            "basis": "约等量毫升",
+            "allergens": [
+              "乳制品"
+            ]
+          },
+          {
+            "id": "egg",
+            "name": "鸡蛋",
+            "grams": 100,
+            "calories": 144,
+            "protein": 12.6,
+            "carbs": 0.7,
+            "fat": 9.5,
+            "basis": "去壳熟重",
+            "allergens": [
+              "蛋"
+            ]
+          },
+          {
+            "id": "apple",
+            "name": "苹果",
+            "grams": 100,
+            "calories": 52,
+            "protein": 0.3,
+            "carbs": 14,
+            "fat": 0.2,
+            "basis": "去核可食部分",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day0-lunch",
+        "name": "午餐",
+        "ingredients": [
+          {
+            "id": "rice",
+            "name": "杂粮饭",
+            "grams": 200,
+            "calories": 116,
+            "protein": 2.6,
+            "carbs": 25.9,
+            "fat": 0.3,
+            "basis": "熟重",
+            "allergens": []
+          },
+          {
+            "id": "chicken",
+            "name": "鸡胸肉",
+            "grams": 120,
+            "calories": 165,
+            "protein": 31,
+            "carbs": 0,
+            "fat": 3.6,
+            "basis": "去皮熟重",
+            "allergens": []
+          },
+          {
+            "id": "broccoli",
+            "name": "西兰花",
+            "grams": 250,
+            "calories": 35,
+            "protein": 2.8,
+            "carbs": 7,
+            "fat": 0.4,
+            "basis": "熟重；不含油",
+            "allergens": []
+          },
+          {
+            "id": "oil",
+            "name": "烹调油",
+            "grams": 8,
+            "calories": 900,
+            "protein": 0,
+            "carbs": 0,
+            "fat": 100,
+            "basis": "全餐合计使用量",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day0-dinner",
+        "name": "晚餐",
+        "ingredients": [
+          {
+            "id": "rice",
+            "name": "杂粮饭",
+            "grams": 150,
+            "calories": 116,
+            "protein": 2.6,
+            "carbs": 25.9,
+            "fat": 0.3,
+            "basis": "熟重",
+            "allergens": []
+          },
+          {
+            "id": "tofu",
+            "name": "北豆腐",
+            "grams": 200,
+            "calories": 100,
+            "protein": 10,
+            "carbs": 2,
+            "fat": 6,
+            "basis": "可食部分",
+            "allergens": [
+              "大豆"
+            ]
+          },
+          {
+            "id": "veg",
+            "name": "时令蔬菜",
+            "grams": 250,
+            "calories": 30,
+            "protein": 2,
+            "carbs": 5,
+            "fat": 0.3,
+            "basis": "熟重；不含油",
+            "allergens": []
+          },
+          {
+            "id": "oil",
+            "name": "烹调油",
+            "grams": 7,
+            "calories": 900,
+            "protein": 0,
+            "carbs": 0,
+            "fat": 100,
+            "basis": "全餐合计使用量",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day0-snack",
+        "name": "加餐 / 零食",
+        "ingredients": [
+          {
+            "id": "yogurt",
+            "name": "原味无糖酸奶",
+            "grams": 200,
+            "calories": 63,
+            "protein": 4,
+            "carbs": 5,
+            "fat": 3.2,
+            "basis": "成品重，按包装核对",
+            "allergens": [
+              "乳制品"
+            ]
+          },
+          {
+            "id": "orange",
+            "name": "橙子",
+            "grams": 150,
+            "calories": 47,
+            "protein": 0.9,
+            "carbs": 12,
+            "fat": 0.1,
+            "basis": "去皮可食部分",
+            "allergens": []
+          },
+          {
+            "id": "nuts",
+            "name": "原味坚果",
+            "grams": 10,
+            "calories": 600,
+            "protein": 20,
+            "carbs": 20,
+            "fat": 54,
+            "basis": "可食部分",
+            "allergens": [
+              "坚果"
+            ]
+          }
+        ],
+        "note": "加餐可按饥饿感选择，不是必须吃完；零食也计入全天摄入。"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "鱼肉与彩蔬",
+    "meals": [
+      {
+        "id": "day1-breakfast",
+        "name": "早餐",
+        "ingredients": [
+          {
+            "id": "bread",
+            "name": "全麦面包",
+            "grams": 80,
+            "calories": 250,
+            "protein": 10,
+            "carbs": 45,
+            "fat": 4,
+            "basis": "成品重",
+            "allergens": [
+              "小麦"
+            ]
+          },
+          {
+            "id": "milk",
+            "name": "低脂牛奶",
+            "grams": 300,
+            "calories": 46,
+            "protein": 3.4,
+            "carbs": 5,
+            "fat": 1.5,
+            "basis": "约等量毫升",
+            "allergens": [
+              "乳制品"
+            ]
+          },
+          {
+            "id": "egg",
+            "name": "鸡蛋",
+            "grams": 100,
+            "calories": 144,
+            "protein": 12.6,
+            "carbs": 0.7,
+            "fat": 9.5,
+            "basis": "去壳熟重",
+            "allergens": [
+              "蛋"
+            ]
+          },
+          {
+            "id": "banana",
+            "name": "香蕉",
+            "grams": 100,
+            "calories": 89,
+            "protein": 1.1,
+            "carbs": 23,
+            "fat": 0.3,
+            "basis": "去皮可食部分",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day1-lunch",
+        "name": "午餐",
+        "ingredients": [
+          {
+            "id": "rice",
+            "name": "杂粮饭",
+            "grams": 200,
+            "calories": 116,
+            "protein": 2.6,
+            "carbs": 25.9,
+            "fat": 0.3,
+            "basis": "熟重",
+            "allergens": []
+          },
+          {
+            "id": "fish",
+            "name": "清蒸白肉鱼",
+            "grams": 150,
+            "calories": 120,
+            "protein": 24,
+            "carbs": 0,
+            "fat": 2.5,
+            "basis": "去骨熟重",
+            "allergens": [
+              "鱼"
+            ]
+          },
+          {
+            "id": "veg",
+            "name": "时令蔬菜",
+            "grams": 250,
+            "calories": 30,
+            "protein": 2,
+            "carbs": 5,
+            "fat": 0.3,
+            "basis": "熟重；不含油",
+            "allergens": []
+          },
+          {
+            "id": "oil",
+            "name": "烹调油",
+            "grams": 8,
+            "calories": 900,
+            "protein": 0,
+            "carbs": 0,
+            "fat": 100,
+            "basis": "全餐合计使用量",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day1-dinner",
+        "name": "晚餐",
+        "ingredients": [
+          {
+            "id": "sweetpotato",
+            "name": "红薯",
+            "grams": 250,
+            "calories": 90,
+            "protein": 1.6,
+            "carbs": 20.7,
+            "fat": 0.1,
+            "basis": "蒸熟重",
+            "allergens": []
+          },
+          {
+            "id": "chicken",
+            "name": "鸡胸肉",
+            "grams": 120,
+            "calories": 165,
+            "protein": 31,
+            "carbs": 0,
+            "fat": 3.6,
+            "basis": "去皮熟重",
+            "allergens": []
+          },
+          {
+            "id": "broccoli",
+            "name": "西兰花",
+            "grams": 250,
+            "calories": 35,
+            "protein": 2.8,
+            "carbs": 7,
+            "fat": 0.4,
+            "basis": "熟重；不含油",
+            "allergens": []
+          },
+          {
+            "id": "oil",
+            "name": "烹调油",
+            "grams": 7,
+            "calories": 900,
+            "protein": 0,
+            "carbs": 0,
+            "fat": 100,
+            "basis": "全餐合计使用量",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day1-snack",
+        "name": "加餐 / 零食",
+        "ingredients": [
+          {
+            "id": "yogurt",
+            "name": "原味无糖酸奶",
+            "grams": 200,
+            "calories": 63,
+            "protein": 4,
+            "carbs": 5,
+            "fat": 3.2,
+            "basis": "成品重，按包装核对",
+            "allergens": [
+              "乳制品"
+            ]
+          },
+          {
+            "id": "apple",
+            "name": "苹果",
+            "grams": 150,
+            "calories": 52,
+            "protein": 0.3,
+            "carbs": 14,
+            "fat": 0.2,
+            "basis": "去核可食部分",
+            "allergens": []
+          },
+          {
+            "id": "nuts",
+            "name": "原味坚果",
+            "grams": 10,
+            "calories": 600,
+            "protein": 20,
+            "carbs": 20,
+            "fat": 54,
+            "basis": "可食部分",
+            "allergens": [
+              "坚果"
+            ]
+          }
+        ],
+        "note": "加餐可按饥饿感选择，不是必须吃完；零食也计入全天摄入。"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "瘦牛肉与杂粮",
+    "meals": [
+      {
+        "id": "day2-breakfast",
+        "name": "早餐",
+        "ingredients": [
+          {
+            "id": "oats",
+            "name": "燕麦",
+            "grams": 50,
+            "calories": 380,
+            "protein": 13,
+            "carbs": 67,
+            "fat": 7,
+            "basis": "干重",
+            "allergens": []
+          },
+          {
+            "id": "soy",
+            "name": "无糖豆浆",
+            "grams": 300,
+            "calories": 33,
+            "protein": 3,
+            "carbs": 1.8,
+            "fat": 1.5,
+            "basis": "约等量毫升，按包装核对",
+            "allergens": [
+              "大豆"
+            ]
+          },
+          {
+            "id": "egg",
+            "name": "鸡蛋",
+            "grams": 100,
+            "calories": 144,
+            "protein": 12.6,
+            "carbs": 0.7,
+            "fat": 9.5,
+            "basis": "去壳熟重",
+            "allergens": [
+              "蛋"
+            ]
+          },
+          {
+            "id": "kiwi",
+            "name": "猕猴桃",
+            "grams": 150,
+            "calories": 61,
+            "protein": 1.1,
+            "carbs": 15,
+            "fat": 0.5,
+            "basis": "可食部分",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day2-lunch",
+        "name": "午餐",
+        "ingredients": [
+          {
+            "id": "rice",
+            "name": "杂粮饭",
+            "grams": 200,
+            "calories": 116,
+            "protein": 2.6,
+            "carbs": 25.9,
+            "fat": 0.3,
+            "basis": "熟重",
+            "allergens": []
+          },
+          {
+            "id": "beef",
+            "name": "瘦牛肉",
+            "grams": 120,
+            "calories": 190,
+            "protein": 29,
+            "carbs": 0,
+            "fat": 8,
+            "basis": "熟重",
+            "allergens": []
+          },
+          {
+            "id": "veg",
+            "name": "时令蔬菜",
+            "grams": 250,
+            "calories": 30,
+            "protein": 2,
+            "carbs": 5,
+            "fat": 0.3,
+            "basis": "熟重；不含油",
+            "allergens": []
+          },
+          {
+            "id": "oil",
+            "name": "烹调油",
+            "grams": 8,
+            "calories": 900,
+            "protein": 0,
+            "carbs": 0,
+            "fat": 100,
+            "basis": "全餐合计使用量",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day2-dinner",
+        "name": "晚餐",
+        "ingredients": [
+          {
+            "id": "corn",
+            "name": "玉米",
+            "grams": 200,
+            "calories": 112,
+            "protein": 4,
+            "carbs": 23,
+            "fat": 1.2,
+            "basis": "煮熟可食部分",
+            "allergens": []
+          },
+          {
+            "id": "tofu",
+            "name": "北豆腐",
+            "grams": 200,
+            "calories": 100,
+            "protein": 10,
+            "carbs": 2,
+            "fat": 6,
+            "basis": "可食部分",
+            "allergens": [
+              "大豆"
+            ]
+          },
+          {
+            "id": "broccoli",
+            "name": "西兰花",
+            "grams": 250,
+            "calories": 35,
+            "protein": 2.8,
+            "carbs": 7,
+            "fat": 0.4,
+            "basis": "熟重；不含油",
+            "allergens": []
+          },
+          {
+            "id": "oil",
+            "name": "烹调油",
+            "grams": 7,
+            "calories": 900,
+            "protein": 0,
+            "carbs": 0,
+            "fat": 100,
+            "basis": "全餐合计使用量",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day2-snack",
+        "name": "加餐 / 零食",
+        "ingredients": [
+          {
+            "id": "milk",
+            "name": "低脂牛奶",
+            "grams": 200,
+            "calories": 46,
+            "protein": 3.4,
+            "carbs": 5,
+            "fat": 1.5,
+            "basis": "约等量毫升",
+            "allergens": [
+              "乳制品"
+            ]
+          },
+          {
+            "id": "apple",
+            "name": "苹果",
+            "grams": 150,
+            "calories": 52,
+            "protein": 0.3,
+            "carbs": 14,
+            "fat": 0.2,
+            "basis": "去核可食部分",
+            "allergens": []
+          },
+          {
+            "id": "nuts",
+            "name": "原味坚果",
+            "grams": 10,
+            "calories": 600,
+            "protein": 20,
+            "carbs": 20,
+            "fat": 54,
+            "basis": "可食部分",
+            "allergens": [
+              "坚果"
+            ]
+          }
+        ],
+        "note": "加餐可按饥饿感选择，不是必须吃完；零食也计入全天摄入。"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "虾仁与豆腐",
+    "meals": [
+      {
+        "id": "day3-breakfast",
+        "name": "早餐",
+        "ingredients": [
+          {
+            "id": "bread",
+            "name": "全麦面包",
+            "grams": 80,
+            "calories": 250,
+            "protein": 10,
+            "carbs": 45,
+            "fat": 4,
+            "basis": "成品重",
+            "allergens": [
+              "小麦"
+            ]
+          },
+          {
+            "id": "milk",
+            "name": "低脂牛奶",
+            "grams": 300,
+            "calories": 46,
+            "protein": 3.4,
+            "carbs": 5,
+            "fat": 1.5,
+            "basis": "约等量毫升",
+            "allergens": [
+              "乳制品"
+            ]
+          },
+          {
+            "id": "egg",
+            "name": "鸡蛋",
+            "grams": 100,
+            "calories": 144,
+            "protein": 12.6,
+            "carbs": 0.7,
+            "fat": 9.5,
+            "basis": "去壳熟重",
+            "allergens": [
+              "蛋"
+            ]
+          },
+          {
+            "id": "orange",
+            "name": "橙子",
+            "grams": 150,
+            "calories": 47,
+            "protein": 0.9,
+            "carbs": 12,
+            "fat": 0.1,
+            "basis": "去皮可食部分",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day3-lunch",
+        "name": "午餐",
+        "ingredients": [
+          {
+            "id": "rice",
+            "name": "杂粮饭",
+            "grams": 200,
+            "calories": 116,
+            "protein": 2.6,
+            "carbs": 25.9,
+            "fat": 0.3,
+            "basis": "熟重",
+            "allergens": []
+          },
+          {
+            "id": "shrimp",
+            "name": "虾仁",
+            "grams": 150,
+            "calories": 99,
+            "protein": 24,
+            "carbs": 0,
+            "fat": 0.3,
+            "basis": "去壳熟重",
+            "allergens": [
+              "虾"
+            ]
+          },
+          {
+            "id": "broccoli",
+            "name": "西兰花",
+            "grams": 250,
+            "calories": 35,
+            "protein": 2.8,
+            "carbs": 7,
+            "fat": 0.4,
+            "basis": "熟重；不含油",
+            "allergens": []
+          },
+          {
+            "id": "oil",
+            "name": "烹调油",
+            "grams": 8,
+            "calories": 900,
+            "protein": 0,
+            "carbs": 0,
+            "fat": 100,
+            "basis": "全餐合计使用量",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day3-dinner",
+        "name": "晚餐",
+        "ingredients": [
+          {
+            "id": "rice",
+            "name": "杂粮饭",
+            "grams": 150,
+            "calories": 116,
+            "protein": 2.6,
+            "carbs": 25.9,
+            "fat": 0.3,
+            "basis": "熟重",
+            "allergens": []
+          },
+          {
+            "id": "tofu",
+            "name": "北豆腐",
+            "grams": 200,
+            "calories": 100,
+            "protein": 10,
+            "carbs": 2,
+            "fat": 6,
+            "basis": "可食部分",
+            "allergens": [
+              "大豆"
+            ]
+          },
+          {
+            "id": "veg",
+            "name": "时令蔬菜",
+            "grams": 250,
+            "calories": 30,
+            "protein": 2,
+            "carbs": 5,
+            "fat": 0.3,
+            "basis": "熟重；不含油",
+            "allergens": []
+          },
+          {
+            "id": "oil",
+            "name": "烹调油",
+            "grams": 7,
+            "calories": 900,
+            "protein": 0,
+            "carbs": 0,
+            "fat": 100,
+            "basis": "全餐合计使用量",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day3-snack",
+        "name": "加餐 / 零食",
+        "ingredients": [
+          {
+            "id": "yogurt",
+            "name": "原味无糖酸奶",
+            "grams": 200,
+            "calories": 63,
+            "protein": 4,
+            "carbs": 5,
+            "fat": 3.2,
+            "basis": "成品重，按包装核对",
+            "allergens": [
+              "乳制品"
+            ]
+          },
+          {
+            "id": "banana",
+            "name": "香蕉",
+            "grams": 100,
+            "calories": 89,
+            "protein": 1.1,
+            "carbs": 23,
+            "fat": 0.3,
+            "basis": "去皮可食部分",
+            "allergens": []
+          },
+          {
+            "id": "nuts",
+            "name": "原味坚果",
+            "grams": 10,
+            "calories": 600,
+            "protein": 20,
+            "carbs": 20,
+            "fat": 54,
+            "basis": "可食部分",
+            "allergens": [
+              "坚果"
+            ]
+          }
+        ],
+        "note": "加餐可按饥饿感选择，不是必须吃完；零食也计入全天摄入。"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "鸡肉与红薯",
+    "meals": [
+      {
+        "id": "day4-breakfast",
+        "name": "早餐",
+        "ingredients": [
+          {
+            "id": "oats",
+            "name": "燕麦",
+            "grams": 50,
+            "calories": 380,
+            "protein": 13,
+            "carbs": 67,
+            "fat": 7,
+            "basis": "干重",
+            "allergens": []
+          },
+          {
+            "id": "milk",
+            "name": "低脂牛奶",
+            "grams": 300,
+            "calories": 46,
+            "protein": 3.4,
+            "carbs": 5,
+            "fat": 1.5,
+            "basis": "约等量毫升",
+            "allergens": [
+              "乳制品"
+            ]
+          },
+          {
+            "id": "egg",
+            "name": "鸡蛋",
+            "grams": 100,
+            "calories": 144,
+            "protein": 12.6,
+            "carbs": 0.7,
+            "fat": 9.5,
+            "basis": "去壳熟重",
+            "allergens": [
+              "蛋"
+            ]
+          },
+          {
+            "id": "apple",
+            "name": "苹果",
+            "grams": 150,
+            "calories": 52,
+            "protein": 0.3,
+            "carbs": 14,
+            "fat": 0.2,
+            "basis": "去核可食部分",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day4-lunch",
+        "name": "午餐",
+        "ingredients": [
+          {
+            "id": "rice",
+            "name": "杂粮饭",
+            "grams": 200,
+            "calories": 116,
+            "protein": 2.6,
+            "carbs": 25.9,
+            "fat": 0.3,
+            "basis": "熟重",
+            "allergens": []
+          },
+          {
+            "id": "chicken",
+            "name": "鸡胸肉",
+            "grams": 120,
+            "calories": 165,
+            "protein": 31,
+            "carbs": 0,
+            "fat": 3.6,
+            "basis": "去皮熟重",
+            "allergens": []
+          },
+          {
+            "id": "veg",
+            "name": "时令蔬菜",
+            "grams": 250,
+            "calories": 30,
+            "protein": 2,
+            "carbs": 5,
+            "fat": 0.3,
+            "basis": "熟重；不含油",
+            "allergens": []
+          },
+          {
+            "id": "oil",
+            "name": "烹调油",
+            "grams": 8,
+            "calories": 900,
+            "protein": 0,
+            "carbs": 0,
+            "fat": 100,
+            "basis": "全餐合计使用量",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day4-dinner",
+        "name": "晚餐",
+        "ingredients": [
+          {
+            "id": "sweetpotato",
+            "name": "红薯",
+            "grams": 250,
+            "calories": 90,
+            "protein": 1.6,
+            "carbs": 20.7,
+            "fat": 0.1,
+            "basis": "蒸熟重",
+            "allergens": []
+          },
+          {
+            "id": "fish",
+            "name": "清蒸白肉鱼",
+            "grams": 150,
+            "calories": 120,
+            "protein": 24,
+            "carbs": 0,
+            "fat": 2.5,
+            "basis": "去骨熟重",
+            "allergens": [
+              "鱼"
+            ]
+          },
+          {
+            "id": "broccoli",
+            "name": "西兰花",
+            "grams": 250,
+            "calories": 35,
+            "protein": 2.8,
+            "carbs": 7,
+            "fat": 0.4,
+            "basis": "熟重；不含油",
+            "allergens": []
+          },
+          {
+            "id": "oil",
+            "name": "烹调油",
+            "grams": 7,
+            "calories": 900,
+            "protein": 0,
+            "carbs": 0,
+            "fat": 100,
+            "basis": "全餐合计使用量",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day4-snack",
+        "name": "加餐 / 零食",
+        "ingredients": [
+          {
+            "id": "yogurt",
+            "name": "原味无糖酸奶",
+            "grams": 200,
+            "calories": 63,
+            "protein": 4,
+            "carbs": 5,
+            "fat": 3.2,
+            "basis": "成品重，按包装核对",
+            "allergens": [
+              "乳制品"
+            ]
+          },
+          {
+            "id": "kiwi",
+            "name": "猕猴桃",
+            "grams": 150,
+            "calories": 61,
+            "protein": 1.1,
+            "carbs": 15,
+            "fat": 0.5,
+            "basis": "可食部分",
+            "allergens": []
+          },
+          {
+            "id": "nuts",
+            "name": "原味坚果",
+            "grams": 10,
+            "calories": 600,
+            "protein": 20,
+            "carbs": 20,
+            "fat": 54,
+            "basis": "可食部分",
+            "allergens": [
+              "坚果"
+            ]
+          }
+        ],
+        "note": "加餐可按饥饿感选择，不是必须吃完；零食也计入全天摄入。"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "豆腐与白肉鱼",
+    "meals": [
+      {
+        "id": "day5-breakfast",
+        "name": "早餐",
+        "ingredients": [
+          {
+            "id": "bread",
+            "name": "全麦面包",
+            "grams": 80,
+            "calories": 250,
+            "protein": 10,
+            "carbs": 45,
+            "fat": 4,
+            "basis": "成品重",
+            "allergens": [
+              "小麦"
+            ]
+          },
+          {
+            "id": "soy",
+            "name": "无糖豆浆",
+            "grams": 300,
+            "calories": 33,
+            "protein": 3,
+            "carbs": 1.8,
+            "fat": 1.5,
+            "basis": "约等量毫升，按包装核对",
+            "allergens": [
+              "大豆"
+            ]
+          },
+          {
+            "id": "egg",
+            "name": "鸡蛋",
+            "grams": 100,
+            "calories": 144,
+            "protein": 12.6,
+            "carbs": 0.7,
+            "fat": 9.5,
+            "basis": "去壳熟重",
+            "allergens": [
+              "蛋"
+            ]
+          },
+          {
+            "id": "banana",
+            "name": "香蕉",
+            "grams": 100,
+            "calories": 89,
+            "protein": 1.1,
+            "carbs": 23,
+            "fat": 0.3,
+            "basis": "去皮可食部分",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day5-lunch",
+        "name": "午餐",
+        "ingredients": [
+          {
+            "id": "rice",
+            "name": "杂粮饭",
+            "grams": 200,
+            "calories": 116,
+            "protein": 2.6,
+            "carbs": 25.9,
+            "fat": 0.3,
+            "basis": "熟重",
+            "allergens": []
+          },
+          {
+            "id": "tofu",
+            "name": "北豆腐",
+            "grams": 200,
+            "calories": 100,
+            "protein": 10,
+            "carbs": 2,
+            "fat": 6,
+            "basis": "可食部分",
+            "allergens": [
+              "大豆"
+            ]
+          },
+          {
+            "id": "broccoli",
+            "name": "西兰花",
+            "grams": 250,
+            "calories": 35,
+            "protein": 2.8,
+            "carbs": 7,
+            "fat": 0.4,
+            "basis": "熟重；不含油",
+            "allergens": []
+          },
+          {
+            "id": "oil",
+            "name": "烹调油",
+            "grams": 8,
+            "calories": 900,
+            "protein": 0,
+            "carbs": 0,
+            "fat": 100,
+            "basis": "全餐合计使用量",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day5-dinner",
+        "name": "晚餐",
+        "ingredients": [
+          {
+            "id": "rice",
+            "name": "杂粮饭",
+            "grams": 150,
+            "calories": 116,
+            "protein": 2.6,
+            "carbs": 25.9,
+            "fat": 0.3,
+            "basis": "熟重",
+            "allergens": []
+          },
+          {
+            "id": "fish",
+            "name": "清蒸白肉鱼",
+            "grams": 150,
+            "calories": 120,
+            "protein": 24,
+            "carbs": 0,
+            "fat": 2.5,
+            "basis": "去骨熟重",
+            "allergens": [
+              "鱼"
+            ]
+          },
+          {
+            "id": "veg",
+            "name": "时令蔬菜",
+            "grams": 250,
+            "calories": 30,
+            "protein": 2,
+            "carbs": 5,
+            "fat": 0.3,
+            "basis": "熟重；不含油",
+            "allergens": []
+          },
+          {
+            "id": "oil",
+            "name": "烹调油",
+            "grams": 7,
+            "calories": 900,
+            "protein": 0,
+            "carbs": 0,
+            "fat": 100,
+            "basis": "全餐合计使用量",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day5-snack",
+        "name": "加餐 / 零食",
+        "ingredients": [
+          {
+            "id": "milk",
+            "name": "低脂牛奶",
+            "grams": 300,
+            "calories": 46,
+            "protein": 3.4,
+            "carbs": 5,
+            "fat": 1.5,
+            "basis": "约等量毫升",
+            "allergens": [
+              "乳制品"
+            ]
+          },
+          {
+            "id": "orange",
+            "name": "橙子",
+            "grams": 150,
+            "calories": 47,
+            "protein": 0.9,
+            "carbs": 12,
+            "fat": 0.1,
+            "basis": "去皮可食部分",
+            "allergens": []
+          },
+          {
+            "id": "nuts",
+            "name": "原味坚果",
+            "grams": 10,
+            "calories": 600,
+            "protein": 20,
+            "carbs": 20,
+            "fat": 54,
+            "basis": "可食部分",
+            "allergens": [
+              "坚果"
+            ]
+          }
+        ],
+        "note": "加餐可按饥饿感选择，不是必须吃完；零食也计入全天摄入。"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "家常均衡日",
+    "meals": [
+      {
+        "id": "day6-breakfast",
+        "name": "早餐",
+        "ingredients": [
+          {
+            "id": "oats",
+            "name": "燕麦",
+            "grams": 50,
+            "calories": 380,
+            "protein": 13,
+            "carbs": 67,
+            "fat": 7,
+            "basis": "干重",
+            "allergens": []
+          },
+          {
+            "id": "milk",
+            "name": "低脂牛奶",
+            "grams": 300,
+            "calories": 46,
+            "protein": 3.4,
+            "carbs": 5,
+            "fat": 1.5,
+            "basis": "约等量毫升",
+            "allergens": [
+              "乳制品"
+            ]
+          },
+          {
+            "id": "egg",
+            "name": "鸡蛋",
+            "grams": 100,
+            "calories": 144,
+            "protein": 12.6,
+            "carbs": 0.7,
+            "fat": 9.5,
+            "basis": "去壳熟重",
+            "allergens": [
+              "蛋"
+            ]
+          },
+          {
+            "id": "kiwi",
+            "name": "猕猴桃",
+            "grams": 150,
+            "calories": 61,
+            "protein": 1.1,
+            "carbs": 15,
+            "fat": 0.5,
+            "basis": "可食部分",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day6-lunch",
+        "name": "午餐",
+        "ingredients": [
+          {
+            "id": "rice",
+            "name": "杂粮饭",
+            "grams": 200,
+            "calories": 116,
+            "protein": 2.6,
+            "carbs": 25.9,
+            "fat": 0.3,
+            "basis": "熟重",
+            "allergens": []
+          },
+          {
+            "id": "chicken",
+            "name": "鸡胸肉",
+            "grams": 120,
+            "calories": 165,
+            "protein": 31,
+            "carbs": 0,
+            "fat": 3.6,
+            "basis": "去皮熟重",
+            "allergens": []
+          },
+          {
+            "id": "veg",
+            "name": "时令蔬菜",
+            "grams": 250,
+            "calories": 30,
+            "protein": 2,
+            "carbs": 5,
+            "fat": 0.3,
+            "basis": "熟重；不含油",
+            "allergens": []
+          },
+          {
+            "id": "oil",
+            "name": "烹调油",
+            "grams": 8,
+            "calories": 900,
+            "protein": 0,
+            "carbs": 0,
+            "fat": 100,
+            "basis": "全餐合计使用量",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day6-dinner",
+        "name": "晚餐",
+        "ingredients": [
+          {
+            "id": "corn",
+            "name": "玉米",
+            "grams": 200,
+            "calories": 112,
+            "protein": 4,
+            "carbs": 23,
+            "fat": 1.2,
+            "basis": "煮熟可食部分",
+            "allergens": []
+          },
+          {
+            "id": "tofu",
+            "name": "北豆腐",
+            "grams": 200,
+            "calories": 100,
+            "protein": 10,
+            "carbs": 2,
+            "fat": 6,
+            "basis": "可食部分",
+            "allergens": [
+              "大豆"
+            ]
+          },
+          {
+            "id": "broccoli",
+            "name": "西兰花",
+            "grams": 250,
+            "calories": 35,
+            "protein": 2.8,
+            "carbs": 7,
+            "fat": 0.4,
+            "basis": "熟重；不含油",
+            "allergens": []
+          },
+          {
+            "id": "oil",
+            "name": "烹调油",
+            "grams": 7,
+            "calories": 900,
+            "protein": 0,
+            "carbs": 0,
+            "fat": 100,
+            "basis": "全餐合计使用量",
+            "allergens": []
+          }
+        ],
+        "note": "优先蒸、煮或少油烹调；量按实际食用记录。"
+      },
+      {
+        "id": "day6-snack",
+        "name": "加餐 / 零食",
+        "ingredients": [
+          {
+            "id": "yogurt",
+            "name": "原味无糖酸奶",
+            "grams": 200,
+            "calories": 63,
+            "protein": 4,
+            "carbs": 5,
+            "fat": 3.2,
+            "basis": "成品重，按包装核对",
+            "allergens": [
+              "乳制品"
+            ]
+          },
+          {
+            "id": "apple",
+            "name": "苹果",
+            "grams": 150,
+            "calories": 52,
+            "protein": 0.3,
+            "carbs": 14,
+            "fat": 0.2,
+            "basis": "去核可食部分",
+            "allergens": []
+          },
+          {
+            "id": "nuts",
+            "name": "原味坚果",
+            "grams": 10,
+            "calories": 600,
+            "protein": 20,
+            "carbs": 20,
+            "fat": 54,
+            "basis": "可食部分",
+            "allergens": [
+              "坚果"
+            ]
+          }
+        ],
+        "note": "加餐可按饥饿感选择，不是必须吃完；零食也计入全天摄入。"
+      }
+    ]
+  }
+]

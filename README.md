@@ -1,13 +1,32 @@
-# FitLife V4.1 · 原定制计划 + 本地计划库
+# FitLife V4.2 · 原定制计划 + 本地计划库
 
 中文 SwiftUI App，iOS 16.0+，全部训练计划和记录在本机保存。
 
-[直接下载 V4.1 TIPA](https://github.com/hang2251641767-sketch/fatloss28-ios/releases/latest/download/FitLife-V4.1.tipa)
+[直接下载 V4.2 TIPA](https://github.com/hang2251641767-sketch/fatloss28-ios/releases/latest/download/FitLife-V4.2.tipa)
 [发布记录](https://github.com/hang2251641767-sketch/fatloss28-ios/releases)
 
-首次 V4.1 构建成功后下载链接生效。本包用于已安装 TrollStore 的兼容设备测试。
+首次 V4.2 构建成功后下载链接生效。本包用于已安装 TrollStore 的兼容设备测试。
 
-## V4.1 更新
+## V4.2 跟练与餐单
+
+课程库改为照片封面卡片，加入分类切换、按压动画、跟练入口和“我订阅的课程”；原课程显示为“28天居家减脂”。订阅表示加入本机，没有账户登录、收费或 Keep 内容授权关系。
+
+本地跟练：热身 → 准备 → 动作 / 左右侧 → 组间休息 → 放松，支持中文系统语音、暂停、上一步、跳过和提前确认已完成组；切到后台会自动暂停，跳过不计完成。次数按约4秒/次估时，动作需要按自身节奏执行；没有动作识别、实时姿态纠正或真人视频。简化示意不替代标准教学，未知自定义动作会明确显示暂无对应动画。结束后可保存已完成组，不会自动记录未执行组。
+
+饮食首页新增7天轮换菜单，重复4周配合28天课程。每天有早餐、午餐、晚餐、加餐的具体食物、克数、称量依据和通用营养估算。模板约1900kcal，与用户现有目标分别展示；不把体重/身高单独换算成个人热量处方。手动确认按模板吃了才写入记录，重复点同一餐不会重复添加。
+
+过敏/忌口保存于本机并随备份导出；命中项标为避免/需替换并禁用整餐模板记录。普通高糖、高油食品标为控制份量/频率；普通主食和水果不一律禁吃。对已知过敏原仍须核对实际食物标签和交叉接触，内置分类并非完整过敏原数据库。新增个人资料JSON导入会更新身高、今日体重，仅在文件提供目标时更新热量；不删除历史。个人用户的身体数据不写入公开源码。
+
+三张原创课程/餐食封面使用内置图像生成工具制作并保存在：
+- FitLife/Assets.xcassets/CourseHome.imageset/cover.png
+- FitLife/Assets.xcassets/CourseStrength.imageset/cover.png
+- FitLife/Assets.xcassets/NutritionCover.imageset/cover.png
+
+提示词：横向原创健身App照片封面，无文字、品牌、水印；居家哑铃/瑜伽垫与自然窗光；深色哑铃/训练凳；家常杂粮饭/鸡肉/蔬菜/水果与牛奶。完整提示见IMAGE_ASSETS.md。跟练动作由SwiftUI绘制，是代码动画而非图像生成的视频。
+
+公开Release还包含实际模拟器界面截图（若截图步骤成功）。Debug预览使用独立测试数据域，Release不含预览入口。
+
+## V4.1 基础更新
 
 上一版只迁移打卡记录，没有包含 V3 硬编码的完整训练表。现在自动补回原定制方案，并提供离线计划库。
 
@@ -27,7 +46,7 @@
 9. 减脂 · 中级力量加有氧
 10. 恢复 · 轻活动与灵活性
 
-入口：训练 → 本地计划库。可按难度、目标和关键词筛选，查看器械、周期、每日动作与建议，选择开始日期后加入。
+入口：训练 → 课程库。可按难度、目标和关键词筛选，查看器械、周期、每日动作与建议，选择开始日期后加入。
 切换只暂停上一套方案，不删除自定义动作和历史；一次启用一套计划库方案，自定义每周循环计划独立保留。
 重新开始已加入的方案会保留自己的动作修改。再次从库加入同一模板则建立新实例，保留旧实例。
 所有计划由本项目编写；没有复制 Keep 视频、课程或付费内容。
@@ -38,8 +57,8 @@
 
 Bundle ID 保持 `com.example.fatloss28`；持久化数据键保持 `fitlife.v4.data`，JSON 备份 schema version 仍为 4。
 新增字段均可选，旧 V4.0 JSON 和没有新字段的自定义计划可继续读取。
-首次 V4.1 启动只补回一次原方案，不覆盖原训练、体重或饮食。旧方案存在时也不重复创建。
-若之前已有自定义计划，恢复的原方案先保存在“我的计划库方案”，不会强行更换当前安排；可手动启用。
+首次 V4.2 启动只补回一次原方案，不覆盖原训练、体重或饮食。旧方案存在时也不重复创建。
+若之前已有自定义计划，恢复的原方案先保存在“我订阅的课程”，不会强行更换当前安排；可手动启用。
 V3 的 weightLog / doneItems 保留日期迁移，腰围等原始 JSON 存入 legacyV3 且旧键不删除。
 
 先在旧版“我的”导出 JSON 备份，再通过 TrollStore 覆盖安装。不要先卸载；实机数据容器保留仍需设备验证。
@@ -56,7 +75,7 @@ V3 的 weightLog / doneItems 保留日期迁移，腰围等原始 JSON 存入 le
 
 ## Windows / GitHub
 
-这个仓库的主分支更新会触发 Actions 的 **Build FitLife V4.1 TIPA**。也可到 Actions → 选择工作流 → Run workflow。
+这个仓库的主分支更新会触发 Actions 的 **Build FitLife V4.2 TIPA**。也可到 Actions → 选择工作流 → Run workflow。
 依次执行资源检查、生成 Xcode 工程、iOS 模拟器回归测试、iOS Release 编译、ad-hoc 签名、TIPA 校验并发布 GitHub Release。
 成功后可以从 Releases 直接下载 .tipa，不需要 Mac 或 Apple 开发者证书。
 
@@ -64,7 +83,7 @@ V3 的 weightLog / doneItems 保留日期迁移，腰围等原始 JSON 存入 le
 ```powershell
 git init
 git add FitLife Tests scripts .github project.yml README.md .gitignore
-git commit -m "FitLife V4.1"
+git commit -m "FitLife V4.2"
 git branch -M main
 git remote add origin https://github.com/你的用户名/你的仓库名.git
 git push -u origin main

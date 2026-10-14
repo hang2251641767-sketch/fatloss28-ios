@@ -13,6 +13,7 @@ final class AppStore: ObservableObject {
     @Published private(set) var library: [TrainingProgram] = []
     @Published private(set) var libraryError = ""
     private var programRecoveryVersion: Int?
+    @Published var nutritionPreferences = NutritionPreferences() { didSet { save() } }
     @Published var reminderMessage = ""
     private var legacyV3: [String: String] = [:]
     private let defaults: UserDefaults
@@ -85,7 +86,8 @@ final class AppStore: ObservableObject {
     private var backup: BackupData {
         BackupData(profile: profile, weights: weights, nutrition: nutrition, plans: plans,
                    workouts: workouts, legacyV3: legacyV3, enrollments: enrollments,
-                   activeEnrollmentID: activeEnrollmentID, programRecoveryVersion: programRecoveryVersion)
+                   activeEnrollmentID: activeEnrollmentID, programRecoveryVersion: programRecoveryVersion,
+                   nutritionPreferences: nutritionPreferences)
     }
 
     func save() {
@@ -100,9 +102,14 @@ final class AppStore: ObservableObject {
         plans = data.plans
         workouts = data.workouts ?? []
         legacyV3 = data.legacyV3 ?? [:]
-        enrollments = data.enrollments ?? []
+        enrollments = (data.enrollments ?? []).map { original in
+            var value = original
+            if value.sourceID == ProgramLibrary.originalID && value.name == "我的原定制 · 28天居家减脂" { value.name = "28天居家减脂" }
+            return value
+        }
         activeEnrollmentID = data.activeEnrollmentID
         programRecoveryVersion = data.programRecoveryVersion
+        nutritionPreferences = data.nutritionPreferences ?? NutritionPreferences()
     }
 
     func exportData() throws -> URL {
@@ -171,6 +178,27 @@ final class AppStore: ObservableObject {
                 }
             }
         }
+    }
+
+    func logSuggestedMeal(_ meal: SuggestedMeal, on date: Date) -> Bool {
+        guard !meal.isBlocked(nutritionPreferences),
+              !nutrition.contains(where: { $0.guideMealID == meal.id && Calendar.current.isDate($0.date, inSameDayAs: date) })
+        else { return false }
+        nutrition.append(meal.entry(on: date))
+        return true
+    }
+
+    func importPersonalDietSettings(from url: URL) throws {
+        let settings = try JSONDecoder().decode(PersonalDietSettings.self, from: Data(contentsOf: url))
+        guard settings.version == 1,
+              settings.height.map({ $0.isFinite && (80...260).contains($0) }) ?? true,
+              settings.weight.map({ $0.isFinite && (20...500).contains($0) }) ?? true,
+              settings.targetCalories.map({ (1200...5000).contains($0) }) ?? true
+        else { throw DataError.invalidBackup }
+        if let height = settings.height { profile.height = height }
+        if let weight = settings.weight { addWeight(weight) }
+        if let target = settings.targetCalories { profile.dailyCalories = target }
+        if let avoided = settings.avoidedFoods { nutritionPreferences.avoidedFoods = avoided }
     }
 
     /// Each enrollment owns copies, so editing it cannot mutate the offline library.

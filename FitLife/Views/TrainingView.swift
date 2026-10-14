@@ -3,71 +3,85 @@ import SwiftUI
 struct TrainingView: View {
     @EnvironmentObject var store: AppStore
     @State private var creating = false
+    @State private var deleting: UUID?
+    @State private var deletePrompt = false
     private var customPlans: [WorkoutPlan] { store.plans.filter { $0.programInstanceID == nil } }
+    private var subscriptions: [ProgramEnrollment] {
+        store.enrollments.sorted {
+            if ($0.id == store.activeEnrollmentID) != ($1.id == store.activeEnrollmentID) { return $0.id == store.activeEnrollmentID }
+            return $0.startDate > $1.startDate
+        }
+    }
     var body: some View {
         NavigationStack {
-            List {
-                Section {
-                    NavigationLink {
-                        ProgramLibraryView()
-                    } label: {
-                        Label("本地计划库 · 初级 / 中级 / 增肌 / 减脂", systemImage: "square.grid.2x2.fill")
-                            .padding(.vertical, 6)
+            ScrollView {
+                LazyVStack(alignment: .leading, spacing: 22) {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text("我订阅的课程").font(.title2.bold())
+                            Text("每天一步，跟着自己的节奏完成").font(.subheadline).foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                        NavigationLink { ProgramLibraryView() } label: { Image(systemName: "square.grid.2x2.fill").font(.title2) }
                     }
-                    Text("原来的定制计划已恢复在计划库中。内置方案可离线查看和一键加入。")
-                        .font(.footnote).foregroundStyle(.secondary)
-                }
-                if let current = store.activeEnrollment {
-                    Section("当前计划 · \(current.name)") {
-                        ProgramProgressView(enrollment: current)
-                        ForEach(store.plansForEnrollment(current.id).sorted { ($0.cycleDay ?? 0) < ($1.cycleDay ?? 0) }) { plan in
+                    if subscriptions.isEmpty {
+                        NavigationLink { ProgramLibraryView() } label: {
+                            CourseCard(title: "28天居家减脂", subtitle: "哑铃与自重 · 从基础开始", image: "CourseHome", badge: "选择你的第一门课程")
+                        }.buttonStyle(SpringCardStyle())
+                    }
+                    ForEach(subscriptions) { enrollment in
+                        NavigationLink { EnrollmentDetailView(enrollmentID: enrollment.id) } label: {
+                            CourseCard(title: enrollment.sourceID == ProgramLibrary.originalID ? "28天居家减脂" : enrollment.name,
+                                subtitle: "\(enrollment.weeks) 周课程 · \(enrollment.id == store.activeEnrollmentID ? "正在跟练" : "已订阅，可随时启用")",
+                                image: store.library.first { $0.id == enrollment.sourceID }?.coverName ?? "CourseHome",
+                                badge: enrollment.id == store.activeEnrollmentID ? "我的当前课程" : "已订阅",
+                                progress: enrollment.progress(on: Date()))
+                        }.buttonStyle(SpringCardStyle())
+                    }
+                    if !store.todayPlans.isEmpty {
+                        Text("今日跟练").font(.title3.bold())
+                        ForEach(store.todayPlans) { plan in
                             NavigationLink { WorkoutDetailView(planID: plan.id) } label: {
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text("第 \((plan.cycleDay ?? 0) + 1) 天 · \(plan.name)").font(.headline)
-                                    Text("\(plan.exercises.count) 个动作 / 项目").font(.caption).foregroundStyle(.secondary)
-                                }
-                            }
-                        }
-                        Button("暂停这套方案") { store.activeEnrollmentID = nil }
-                    }
-                }
-                Section("我的计划库方案") {
-                    if store.enrollments.isEmpty { Text("先从计划库加入一套方案").foregroundStyle(.secondary) }
-                    ForEach(store.enrollments.sorted { $0.startDate > $1.startDate }) { enrollment in
-                        NavigationLink {
-                            EnrollmentDetailView(enrollmentID: enrollment.id)
-                        } label: {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(enrollment.name)
-                                Text(enrollment.id == store.activeEnrollmentID ? "当前启用" : "已暂停")
-                                    .font(.caption).foregroundStyle(enrollment.id == store.activeEnrollmentID ? Color.green : Color.secondary)
-                            }
+                                HStack(spacing: 14) {
+                                    Image(systemName: "play.circle.fill").font(.largeTitle).foregroundStyle(.green)
+                                    VStack(alignment: .leading, spacing: 5) {
+                                        Text(plan.name).font(.headline).foregroundStyle(.primary)
+                                        Text("\(plan.exercises.count) 个动作 / 活动 · 进入后点开始跟练").font(.caption).foregroundStyle(.secondary)
+                                    }
+                                    Spacer(); Image(systemName: "chevron.right").foregroundStyle(.secondary)
+                                }.padding().background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 18))
+                            }.buttonStyle(SpringCardStyle())
                         }
                     }
-                }
-                Section("自定义每周循环计划") {
-                    if customPlans.isEmpty { Text("也可以点 + 新建自己的训练日").foregroundStyle(.secondary) }
+                    NavigationLink { ProgramLibraryView() } label: {
+                        Label("探索课程库 · 初级 / 中级 / 增肌 / 减脂", systemImage: "sparkles")
+                            .font(.headline).frame(maxWidth: .infinity).padding()
+                            .background(.green.opacity(0.1), in: RoundedRectangle(cornerRadius: 18))
+                    }
+                    Text("我的自定义训练").font(.title3.bold())
                     ForEach(customPlans) { plan in
                         NavigationLink { WorkoutDetailView(planID: plan.id) } label: {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(plan.name).font(.headline)
-                                Text("\(weekdayName(plan.weekday)) · \(plan.exercises.count) 个动作")
-                                    .font(.caption).foregroundStyle(.secondary)
-                            }
+                            HStack {
+                                Label(plan.name, systemImage: "dumbbell.fill").foregroundStyle(.primary)
+                                Spacer(); Image(systemName: "chevron.right").foregroundStyle(.secondary)
+                            }.padding().background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 16))
                         }
-                    }.onDelete { offsets in
-                        let ids = offsets.map { customPlans[$0].id }
-                        store.plans.removeAll { ids.contains($0.id) }
+                        .contextMenu { Button("删除此计划", role: .destructive) { deleting = plan.id; deletePrompt = true } }
                     }
-                    Button("新建自定义计划") { creating = true }
-                }
+                    Button("创建自定义训练") { creating = true }.buttonStyle(.bordered).frame(maxWidth: .infinity)
+                    Text("订阅表示加入本机课程，无需登录或付费。切换课程会保留以前的动作修改和历史。")
+                        .font(.caption).foregroundStyle(.secondary)
+                }.padding(20)
             }
+            .background(Color(.systemGroupedBackground))
             .navigationTitle("训练")
             .toolbar { Button { creating = true } label: { Image(systemName: "plus") } }
             .sheet(isPresented: $creating) { PlanEditorView() }
+            .confirmationDialog("删除自定义计划？历史记录会保留", isPresented: $deletePrompt, titleVisibility: .visible) {
+                Button("删除", role: .destructive) { if let id = deleting { store.plans.removeAll { $0.id == id } } }
+            }
         }
     }
-    private func weekdayName(_ day: Int) -> String { ["周日", "周一", "周二", "周三", "周四", "周五", "周六"][min(7, max(1, day)) - 1] }
 }
 
 struct ProgramProgressView: View {
@@ -96,7 +110,7 @@ struct EnrollmentDetailView: View {
     var body: some View {
         List {
             if let enrollment = enrollment {
-                Section(enrollment.name) {
+                Section(enrollment.sourceID == ProgramLibrary.originalID ? "28天居家减脂" : enrollment.name) {
                     ProgramProgressView(enrollment: enrollment)
                     Text(enrollment.guidance).font(.footnote)
                     if store.activeEnrollmentID != enrollmentID {
@@ -109,7 +123,7 @@ struct EnrollmentDetailView: View {
                 }
             } else { Text("方案不存在") }
         }
-        .navigationTitle("我的方案")
+        .navigationTitle("我订阅的课程")
         .confirmationDialog("重新开始周期，历史记录会保留", isPresented: $confirmingRestart, titleVisibility: .visible) {
             Button("从今天开始") { store.restartProgram(enrollmentID) }
             Button("取消", role: .cancel) {}
@@ -168,10 +182,20 @@ struct WorkoutDetailView: View {
     @State private var editing = false
     @State private var message = ""
     @State private var showingMessage = false
+    @State private var coachLaunch: CoachLaunch?
     var plan: WorkoutPlan? { store.plans.first { $0.id == planID } }
 
     var body: some View {
         List {
+            Section {
+                Button {
+                    guard let current = plan, validExercises else { message = "请先检查动作与组次"; showingMessage = true; return }
+                    coachLaunch = CoachLaunch(plan: current, exercises: exercises)
+                } label: {
+                    Label("开始动画跟练", systemImage: "play.circle.fill").font(.title3.bold()).frame(maxWidth: .infinity).padding(.vertical, 8)
+                }.buttonStyle(.borderedProminent).disabled(exercises.isEmpty || exercises.allSatisfy { $0.sets.allSatisfy(\.completed) })
+                Text("中文语音、动作示意、倒计时；已完成的组会跳过。").font(.footnote).foregroundStyle(.secondary)
+            }
             if let instructions = plan?.instructions {
                 Section("今日安排") { Text(instructions).font(.subheadline).foregroundStyle(.secondary) }
             }
@@ -223,6 +247,11 @@ struct WorkoutDetailView: View {
         .navigationTitle(plan?.name ?? "训练")
         .toolbar { Button("编辑计划") { editing = true } }
         .sheet(isPresented: $editing) { PlanEditorView(existingID: planID) }
+        .fullScreenCover(item: $coachLaunch, onDismiss: {
+            if let recorded = store.workouts.first(where: { $0.planID == planID && Calendar.current.isDateInToday($0.date) }) {
+                exercises = recorded.exercises
+            }
+        }) { launch in FollowAlongView(plan: launch.plan, exercises: launch.exercises) }
         .onAppear {
             guard !loaded else { return }
             exercises = store.workouts.first(where: { $0.planID == planID && Calendar.current.isDateInToday($0.date) })?.exercises ?? plan?.exercises ?? []

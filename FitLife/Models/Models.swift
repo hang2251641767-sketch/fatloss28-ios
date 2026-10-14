@@ -25,6 +25,7 @@ struct NutritionEntry: Codable, Identifiable {
     var carbs: Double
     var fat: Double
     var meal = ""
+    var guideMealID: String?
 }
 
 struct Exercise: Codable, Identifiable {
@@ -77,6 +78,7 @@ struct BackupData: Codable {
     var enrollments: [ProgramEnrollment]?
     var activeEnrollmentID: UUID?
     var programRecoveryVersion: Int?
+    var nutritionPreferences: NutritionPreferences?
 }
 
 enum DataError: LocalizedError {

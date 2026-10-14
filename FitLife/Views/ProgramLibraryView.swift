@@ -5,45 +5,45 @@ struct ProgramLibraryView: View {
     @State private var level = "全部"
     @State private var goal = "全部"
     @State private var search = ""
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     private var programs: [TrainingProgram] {
         store.library.filter {
             (level == "全部" || $0.level == level) && (goal == "全部" || $0.goal == goal) &&
-            (search.isEmpty || ($0.name + $0.equipment + $0.summary).localizedCaseInsensitiveContains(search))
+            (search.isEmpty || ($0.displayTitle + $0.equipment + $0.summary).localizedCaseInsensitiveContains(search))
         }
     }
     var body: some View {
-        List {
-            Section("按你的节奏选择") {
+        ScrollView {
+            VStack(spacing: 18) {
                 Picker("难度", selection: $level) {
                     ForEach(["全部", "初级", "中级"], id: \.self) { Text($0).tag($0) }
                 }.pickerStyle(.segmented)
-                Picker("目标", selection: $goal) {
-                    ForEach(["全部", "减脂", "增肌", "基础体能", "恢复"], id: \.self) { Text($0).tag($0) }
-                }
-                Text("全部计划随 App 存在本地，无需联网。加入后可修改动作、组次和重量。")
-                    .font(.footnote).foregroundStyle(.secondary)
-            }
-            if !store.libraryError.isEmpty { Text(store.libraryError).foregroundStyle(.secondary) }
-            if programs.isEmpty { Text("没有符合筛选条件的计划").foregroundStyle(.secondary) }
-            ForEach(programs) { program in
-                NavigationLink {
-                    ProgramDetailView(program: program)
-                } label: {
-                    VStack(alignment: .leading, spacing: 8) {
-                        HStack {
-                            Text(program.name).font(.headline)
-                            if program.isOriginal { Text("原定制").font(.caption.bold()).foregroundStyle(.green) }
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(["全部", "减脂", "增肌", "基础体能", "恢复"], id: \.self) { item in
+                            Button { withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) { goal = item } } label: {
+                                Text(item).font(.subheadline.bold()).padding(.horizontal, 16).padding(.vertical, 9)
+                                    .background(goal == item ? Color.green : Color(.secondarySystemGroupedBackground), in: Capsule())
+                                    .foregroundStyle(goal == item ? Color.white : Color.primary)
+                            }
                         }
-                        Text("\(program.level) · \(program.goal) · \(program.equipment)")
-                            .font(.subheadline).foregroundStyle(.secondary)
-                        Text("\(program.weeks) 周 · \(program.minutes) 分钟 / 次")
-                            .font(.caption).foregroundStyle(.secondary)
-                    }.padding(.vertical, 5)
+                    }
                 }
-            }
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 300), spacing: 18)], spacing: 18) {
+                    ForEach(programs) { program in
+                        NavigationLink { ProgramDetailView(program: program) } label: {
+                            CourseCard(title: program.displayTitle, subtitle: "\(program.level) · \(program.equipment) · \(program.minutes) 分钟",
+                                image: program.coverName, badge: "\(program.goal) · \(program.weeks) 周")
+                        }.buttonStyle(SpringCardStyle()).transition(.opacity)
+                    }
+                }
+                if programs.isEmpty { Text("没有符合筛选条件的课程").foregroundStyle(.secondary).padding() }
+                if !store.libraryError.isEmpty { Text(store.libraryError).foregroundStyle(.secondary) }
+            }.padding(20)
         }
-        .navigationTitle("本地计划库")
-        .searchable(text: $search, prompt: "搜索名称或器械")
+        .background(Color(.systemGroupedBackground))
+        .navigationTitle("课程库")
+        .searchable(text: $search, prompt: "搜索课程名称或器械")
     }
 }
 
@@ -55,12 +55,13 @@ struct ProgramDetailView: View {
     @State private var joined = false
     var body: some View {
         List {
-            Section(program.name) {
+            Section {
+                CourseCard(title: program.displayTitle, subtitle: "\(program.level) · \(program.equipment)", image: program.coverName, badge: "\(program.weeks) 周课程")
                 Text(program.summary)
                 Text("\(program.level) · \(program.goal) · \(program.equipment) · \(program.weeks) 周")
                     .font(.subheadline).foregroundStyle(.secondary)
                 DatePicker("开始日期", selection: $startDate, displayedComponents: .date)
-                Button(store.activeEnrollment?.sourceID == program.id ? "重新开始这一计划" : "加入我的计划") {
+                Button(store.activeEnrollment?.sourceID == program.id ? "重新开始这一计划" : "订阅这门课程") {
                     confirming = true
                 }.buttonStyle(.borderedProminent)
             }
@@ -86,15 +87,15 @@ struct ProgramDetailView: View {
                 Text(program.source).font(.caption).foregroundStyle(.secondary)
             }
         }
-        .navigationTitle(program.isOriginal ? "原定制计划" : "计划详情")
+        .navigationTitle("课程详情")
         .navigationBarTitleDisplayMode(.inline)
         .confirmationDialog("加入 \(program.name)", isPresented: $confirming, titleVisibility: .visible) {
-            Button("加入并启用") { store.joinProgram(program, start: startDate); joined = true }
+            Button("订阅并启用") { store.joinProgram(program, start: startDate); joined = true }
             Button("取消", role: .cancel) {}
         } message: {
             Text("\(store.activeEnrollment == nil ? "" : "当前计划库方案将暂停，历史不会删除。")新方案将从所选日期开始，原动作模板不会被覆盖。")
         }
-        .alert("已加入我的计划", isPresented: $joined) {
+        .alert("已订阅课程", isPresented: $joined) {
             Button("好", role: .cancel) {}
         } message: { Text("返回训练页即可查看每日安排与开始训练。") }
     }

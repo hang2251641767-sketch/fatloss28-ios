@@ -1,4 +1,4 @@
-name: Build FitLife V4.1 TIPA
+name: Build FitLife V4.2 TIPA
 on:
   push:
     branches: [main]
@@ -34,10 +34,32 @@ jobs:
         run: |
           set -euo pipefail
           DEVICE_ID=$(xcrun simctl list devices available --json | python3 -c 'import json,sys; d=json.load(sys.stdin); devices=[x for key,items in d["devices"].items() if "iOS" in key for x in items if x.get("isAvailable") and x["name"].startswith("iPhone")]; assert devices, "No iPhone simulator available"; print(devices[0]["udid"])')
+          echo "DEVICE_ID=$DEVICE_ID" >> "$GITHUB_ENV"
           xcodebuild -project FitLife.xcodeproj -scheme FitLife -configuration Debug \
             -sdk iphonesimulator -destination "platform=iOS Simulator,id=$DEVICE_ID" \
             -derivedDataPath build-tests -resultBundlePath TestResults.xcresult \
             CODE_SIGNING_ALLOWED=NO test | tee test.log
+      - name: Capture native UI previews
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          xcrun simctl boot "$DEVICE_ID" 2>/dev/null || true
+          xcrun simctl bootstatus "$DEVICE_ID" -b
+          xcrun simctl install "$DEVICE_ID" build-tests/Build/Products/Debug-iphonesimulator/FitLife.app
+          for SCREEN in courses nutrition coach; do
+            xcrun simctl launch --terminate-running-process "$DEVICE_ID" com.example.fatloss28 "--preview-$SCREEN"
+            sleep 4
+            xcrun simctl io "$DEVICE_ID" screenshot "dist/preview-$SCREEN.png"
+          done
+      - name: Upload UI previews
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: FitLife-V4.2-UI-previews
+          path: dist/preview-*.png
+          if-no-files-found: ignore
       - name: Compile iOS 16+ app
         shell: bash
         run: |
@@ -61,15 +83,15 @@ jobs:
           codesign --verify --deep --strict "$APP"
           mkdir -p dist/Payload
           cp -R "$APP" dist/Payload/
-          (cd dist && zip -qry FitLife-V4.1.tipa Payload)
-          python3 scripts/check_tipa.py dist/FitLife-V4.1.tipa
-          shasum -a 256 dist/FitLife-V4.1.tipa > dist/SHA256SUMS.txt
+          (cd dist && zip -qry FitLife-V4.2.tipa Payload)
+          python3 scripts/check_tipa.py dist/FitLife-V4.2.tipa
+          shasum -a 256 dist/FitLife-V4.2.tipa > dist/SHA256SUMS.txt
       - name: Upload downloadable build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: FitLife-V4.1-TIPA
+          name: FitLife-V4.2-TIPA
           path: |
-            dist/FitLife-V4.1.tipa
+            dist/FitLife-V4.2.tipa
             dist/SHA256SUMS.txt
           if-no-files-found: error
           retention-days: 30
@@ -79,11 +101,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          TAG="v4.1.0-build-${GITHUB_RUN_NUMBER}-${GITHUB_RUN_ATTEMPT}"
-          gh release create "$TAG" dist/FitLife-V4.1.tipa dist/SHA256SUMS.txt \
-            --target "$GITHUB_SHA" --title "FitLife V4.1 · Build ${GITHUB_RUN_NUMBER}" \
-            --notes "简体中文版；iOS 16.0+。本包用于已安装 TrollStore 的兼容设备测试。编译与包结构校验通过；真机运行、通知和旧版覆盖安装仍需验证。安装前建议先备份旧数据。" \
+          TAG="v4.2.0-build-${GITHUB_RUN_NUMBER}-${GITHUB_RUN_ATTEMPT}"
+          gh release create "$TAG" dist/FitLife-V4.2.tipa dist/SHA256SUMS.txt \
+            --target "$GITHUB_SHA" --title "FitLife V4.2 · Build ${GITHUB_RUN_NUMBER}" \
+            --notes "课程卡片、原创封面、动画与中文语音跟练、每日餐单和零食选择。iOS 16.0+。本包用于 TrollStore 测试；非真人视频。编译、回归测试与包校验通过；真机体验和旧版覆盖仍需验证。安装前先备份。" \
             --latest
+          for PREVIEW in dist/preview-*.png; do
+            if [ -f "$PREVIEW" ]; then gh release upload "$TAG" "$PREVIEW"; fi
+          done
       - name: Upload build log if compilation fails
         if: failure()
         uses: actions/upload-artifact@v4
